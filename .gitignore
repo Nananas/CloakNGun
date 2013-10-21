@@ -1,4 +1,0 @@
-# generated files
-bin/
-
-# all files in bin should be ignored. They are generated when the game is build.
