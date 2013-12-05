@@ -1,3 +1,4 @@
-TODO.txt
 
-* shadows beneath cloak and gun
+* traps and stuff to buff the players:
+	- hologram (cloak)
+	- trap (gun)

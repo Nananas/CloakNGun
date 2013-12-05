@@ -13,7 +13,6 @@ class GunsLockTrap extends Trap
 	public function new (X:Int, Y:Int)
 	{
 		super (X,Y,"thecloak");
-		trace(trackType);
 		locked = false;
 		lockTimer = 60;
 	}	
@@ -25,21 +24,34 @@ class GunsLockTrap extends Trap
 		if (locked && target != null){
 			lockTimer -= 1;
 			target.lock();
+		} else if (locked) {
+			lockTimer -= 1;
 		}
 
-		if (lockTimer < 0) {
+		if (lockTimer < 0 && target != null) {
 			target.unlock();
 			scene.remove(this);
 			// explode?
+		} else if (lockTimer < 0) {
+			scene.remove(this);
 		}
 	}
 
-	private override function activate(e:Entity)
+	private override function activate(e:Entity = null)
 	{
-		target = cast(e,TheCloak);
-		trace ("locking position of object "+e);
+		super.activate();
+		
+		if (e != null)
+		{
+			target = cast(e,TheCloak);
+			trace ("locking position of object "+e);
 
-		locked = true;
+			locked = true;
+			
+		} else {
+			trace("hoho");
+			locked = true;
+		}
 
 	}
 

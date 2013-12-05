@@ -1,0 +1,1283 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Partic",
+				"BlueParticles	entities"
+			],
+			[
+				"scalemo",
+				"StageScaleMode	flash.display"
+			],
+			[
+				"sh",
+				"shadowIndicator	var"
+			],
+			[
+				"stag",
+				"stageHeight"
+			],
+			[
+				"died",
+				"diedText	var"
+			],
+			[
+				"are",
+				"Area3	var"
+			],
+			[
+				"Ara",
+				"Area2	var"
+			],
+			[
+				"Are",
+				"Area1	var"
+			],
+			[
+				"cardi",
+				"cardiacOutput	var"
+			],
+			[
+				"or",
+				"orthoF	var"
+			],
+			[
+				"vfx",
+				"vfxBlood	var"
+			],
+			[
+				"rese",
+				"resetSlider"
+			],
+			[
+				"res",
+				"resetSlider"
+			],
+			[
+				"hemor",
+				"hemorrF	var"
+			],
+			[
+				"hyper",
+				"hypertensionDueToStrokeButton	var"
+			],
+			[
+				"sep",
+				"septicShockButton	var"
+			],
+			[
+				"hemo",
+				"hemorrF	var"
+			],
+			[
+				"cardiog",
+				"cardiogenicShockButton	var"
+			],
+			[
+				"w2",
+				"W2	var"
+			],
+			[
+				"this",
+				"thisButtonIsClicked	var"
+			],
+			[
+				"Y",
+				"Y	var"
+			],
+			[
+				"CLi",
+				"ClickButton	entities"
+			],
+			[
+				"fn",
+				"function"
+			],
+			[
+				"prop",
+				"propanololButton	var"
+			],
+			[
+				"nora",
+				"norAdF	var"
+			],
+			[
+				"total",
+				"totalArea	var"
+			],
+			[
+				"tot",
+				"totalArea	var"
+			],
+			[
+				"h2",
+				"h2	var"
+			],
+			[
+				"Area",
+				"Area3	var"
+			],
+			[
+				"ent",
+				"Entity	class"
+			],
+			[
+				"dA",
+				"dA2"
+			],
+			[
+				"d",
+				"dA1"
+			],
+			[
+				"area",
+				"Area2	var"
+			],
+			[
+				"A",
+				"Area1	var"
+			],
+			[
+				"Ar",
+				"Area2	var"
+			],
+			[
+				"K",
+				"K	var"
+			],
+			[
+				"cur",
+				"cur	var"
+			],
+			[
+				"drag",
+				"dragOffsetY	var"
+			],
+			[
+				"orii",
+				"originY"
+			],
+			[
+				"gra",
+				"graphList	var"
+			],
+			[
+				"but",
+				"button2	var"
+			],
+			[
+				"paletlef",
+				"paletLeftvfx"
+			],
+			[
+				"paletLef",
+				"paletLeftvfx"
+			],
+			[
+				"Pal",
+				"PaletFX	entities"
+			],
+			[
+				"speed",
+				"speed	var"
+			],
+			[
+				"image",
+				"image	var"
+			],
+			[
+				"N",
+				"Number"
+			],
+			[
+				"_K",
+				"_KEYDOWNCODE"
+			],
+			[
+				"_",
+				"_KEYUPCODE"
+			],
+			[
+				"UP",
+				"UpdateBullets"
+			],
+			[
+				"Speed",
+				"SPEED"
+			],
+			[
+				"EM",
+				"EMITTERTIMER"
+			],
+			[
+				"E",
+				"EMITTING"
+			],
+			[
+				"S",
+				"SpecialGunman"
+			],
+			[
+				"Swit",
+				"SwitchState"
+			],
+			[
+				"pa",
+				"paramKey"
+			],
+			[
+				"ac",
+				"activeQuad"
+			],
+			[
+				"a",
+				"activeQuad"
+			],
+			[
+				"gri",
+				"gridX"
+			],
+			[
+				"grid",
+				"gridX"
+			],
+			[
+				"next",
+				"nextElement"
+			],
+			[
+				"Cu",
+				"currentActiveElement"
+			],
+			[
+				"nex",
+				"nextRow"
+			],
+			[
+				"cu",
+				"currentActiveElement"
+			],
+			[
+				"current",
+				"currentRow"
+			],
+			[
+				"set",
+				"setColor"
+			],
+			[
+				"bu",
+				"bulletContainer"
+			],
+			[
+				"n",
+				"normalisedDirection"
+			],
+			[
+				"animat",
+				"animationDelay"
+			],
+			[
+				"upda",
+				"updateContainer"
+			],
+			[
+				"par",
+				"particleContainer"
+			],
+			[
+				"parti",
+				"particleDY"
+			],
+			[
+				"inac",
+				"InactiveParticles"
+			],
+			[
+				"P",
+				"ParticleContainer"
+			],
+			[
+				"Anim",
+				"AnimationContainer"
+			],
+			[
+				"item",
+				"itemToRemove"
+			],
+			[
+				"particleinter",
+				"particleIntervalTimer"
+			],
+			[
+				"lif",
+				"lifeTimer"
+			],
+			[
+				"fri",
+				"fireParticleImage"
+			],
+			[
+				"swor",
+				"swordIsReloading"
+			],
+			[
+				"swo",
+				"swordIsReloading"
+			],
+			[
+				"curr",
+				"currentFrame"
+			],
+			[
+				"animo",
+				"animationContainer"
+			],
+			[
+				"fu",
+				"function	function"
+			],
+			[
+				"cont",
+				"currentMinionList"
+			],
+			[
+				"ston",
+				"StoneFragment"
+			],
+			[
+				"fragme",
+				"fragmentsImage"
+			],
+			[
+				"add",
+				"AddMinionsRow"
+			],
+			[
+				"minion",
+				"minionList"
+			],
+			[
+				"new",
+				"New"
+			],
+			[
+				"y",
+				"y"
+			],
+			[
+				"stoneT",
+				"stoneTimer"
+			],
+			[
+				"anima",
+				"animationContainer"
+			],
+			[
+				"else",
+				"else"
+			],
+			[
+				"anm",
+				"animationContainer"
+			],
+			[
+				"stoneTi",
+				"stoneTimerActive"
+			],
+			[
+				"mi",
+				"minion1"
+			],
+			[
+				"min",
+				"minion3"
+			],
+			[
+				"Upd",
+				"Update_After"
+			],
+			[
+				"Update",
+				"Update_Before"
+			],
+			[
+				"max",
+				"maxWalkVelocity"
+			],
+			[
+				"phy",
+				"physicsEntity"
+			],
+			[
+				"ph",
+				"physicsEntity"
+			],
+			[
+				"m",
+				"mouse"
+			],
+			[
+				"int",
+				"Int	class"
+			],
+			[
+				"f",
+				"FLOOR"
+			],
+			[
+				"flx",
+				"FlxPhysSprite	org.flixel.nape"
+			],
+			[
+				"Fl",
+				"FlxPhysState"
+			],
+			[
+				"Flx",
+				"FlxPhysState	org.flixel.nape"
+			],
+			[
+				"fl",
+				"FlxPhysState"
+			],
+			[
+				"scene",
+				"Scene	class"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/entities/TheCloak.hx",
+			"settings":
+			{
+				"buffer_size": 6723,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/TheGun.hx",
+			"settings":
+			{
+				"buffer_size": 8096,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/BulletParticle.hx",
+			"settings":
+			{
+				"buffer_size": 1496,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import com.haxepunk.Scene;\nimport com.haxepunk.HXP;\nimport com.haxepunk.Entity;\nimport com.haxepunk.graphics.Image;\nimport com.haxepunk.graphics.Text;\nimport com.haxepunk.utils.Input;\n\nimport entities.*;\nimport InputHandler;\n\n\nclass MainScene extends Scene\n{\n	private var theGun:TheGun;\n	private var theCloak:TheCloak;\n	\n	private var PGText:Text;\n	private var PCText:Text; \n\n	private var PGEnt:Entity;\n	private var PCEnt:Entity;\n\n	private var scoreText:Text;\n\n	private var snow : Snow;\n\n	public override function begin()\n	{\n		trace(\"beginning game\");\n		//InputHandler.init(2);\n\n		theGun = new TheGun(HXP.width-40, HXP.height/2);\n		theCloak = new TheCloak(40,HXP.height/2);\n		add(theGun);\n		add(theCloak);\n\n		// show player number symbols\n		PGText = new Text(\"P\"+(Registry.theGunControllerNumber+1), 0, -20);\n		PGText.size = 32;\n		PCText = new Text(\"P\"+(Registry.theCloakControllerNumber+1), 0, -20);\n		PCText.size = 32;\n\n		PGEnt = addGraphic(PGText, 5, theGun.x, theGun.y);\n		PCEnt = addGraphic(PCText, 5, theCloak.x, theCloak.y);\n\n		scoreText = new Text(\"P1: \" +Registry.score[0] + \"  |  P2: \"+Registry.score[1]);\n		scoreText.size = 24;\n		addGraphic(scoreText,1,HXP.width / 2,10);\n\n		// \n		var b:Box = new Box(0,-10,HXP.width,20);\n		add(b);\n\n		var b:Box = new Box(0,0,5,HXP.height);\n		add(b);\n\n		var b:Box = new Box(0,HXP.height - 10, HXP.width, 20);\n		add(b);\n\n		var b:Box = new Box(HXP.width - 5, 0, 5, HXP.height);\n		add(b);\n\n		var b:Box = new Box(Std.int(HXP.width/2 - 10), Std.int(HXP.height/2 - 50),20,100);\n		add(b);\n\n		var b:Box = new Box(Std.int(HXP.width/2 - 50), Std.int(HXP.height/2 - 10),100,20);\n		add(b);\n\n		var b:Box = new Box(40,40,40,20);\n		add(b);\n\n		var b:Box = new Box(Std.int(HXP.width - 80),40,40,20);\n		add(b);\n\n		var b:Box = new Box(40,Std.int(HXP.height - 60),40,20);\n		add(b);\n\n		var b:Box = new Box(Std.int(HXP.width - 80),Std.int(HXP.height - 60),40,20);\n		add(b);\n\n		Input.lastKey = 0;\n\n		snow = new Snow();\n		add(snow);\n	}\n\n	public override function update()\n	{\n		if (PGText.alpha > 0)\n		{\n			// fade out those player numbers\n			PGText.alpha -= 0.02;\n			PGEnt.x = theGun.x; PGEnt.y = theGun.y;\n			PCText.alpha -= 0.02;\n			PCEnt.x = theCloak.x; PCEnt.y = theCloak.y;			\n		}\n\n		if (PGText.alpha == 0){\n			remove(PGEnt);\n			remove(PCEnt);\n		}\n\n		if (Input.lastKey == 16777234){\n			Input.lastKey = 0;\n			HXP.scene = new menu.SelectMenu();\n		}\n\n		if (theGun.finished && theCloak.finished){\n			// show end game stuff\n\n			// garbage collect?\n			GC();\n			HXP.scene = new MainScene();\n\n			// switchControllers\n			Registry.switchCC();\n		}\n\n		super.update();\n	}\n\n	private function GC()\n	{\n		theGun = null;\n		theCloak = null;\n		snow = null;<\n	}\n}",
+			"file": "src/MainScene.hx",
+			"file_size": 2665,
+			"file_write_time": 1384707292000000,
+			"settings":
+			{
+				"buffer_size": 2666,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/menu/SelectMenu.hx",
+			"settings":
+			{
+				"buffer_size": 2063,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/Bullet.hx",
+			"settings":
+			{
+				"buffer_size": 2397,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/InputHandler.hx",
+			"settings":
+			{
+				"buffer_size": 4419,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/Snow.hx",
+			"settings":
+			{
+				"buffer_size": 1185,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/Trap.hx",
+			"settings":
+			{
+				"buffer_size": 1182,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/GunsLockTrap.hx",
+			"settings":
+			{
+				"buffer_size": 892,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/entities/CloakGhost.hx",
+			"settings":
+			{
+				"buffer_size": 1329,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/Openfl android.sublime-build",
+	"command_palette":
+	{
+		"height": 54.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"haxe",
+				"Haxe: Manage libraries"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packagecon",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 153.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/Main.hx",
+		"/usr/lib/haxe/lib/HaxePunk/2,4,2/com/haxepunk/Engine.hx",
+		"/usr/lib/haxe/lib/HaxePunk/2,4,2/com/haxepunk/Scene.hx",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/project.xml",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/entities/Bullet.hx",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/entities/Box.hx",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/entities/BlueParticles.hx",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/entities/Rain.hx",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/assets/graphics/Rain.png",
+		"/home/thomas/.config/sublime-text-2/Packages/User/Openfl android.sublime-build",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/build.hxml",
+		"/opt/android-sdk/tools/ant/build.xml",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/CloakNGun.sublime-project",
+		"/home/thomas/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/thomas/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/thomas/.config/sublime-text-2/Packages/Package Control/Package Control.sublime-settings",
+		"/home/thomas/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/menu/SelectMenu.hx",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/MainScene.hx",
+		"/home/thomas/Prog/HAXE/MINI/Mini/Source/mini/Image.hx",
+		"/home/thomas/Prog/HAXE/MINI/Mini/Source/mini/Entity.hx",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/entities/GunsLockTrap.hx",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/entities/Trap.hx",
+		"/home/thomas/Prog/HAXE/MINI/CirculationTwo/project.xml",
+		"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src/Registry.hx",
+		"/home/thomas/Prog/HAXE/FLX/CloakNGun/source/TheGun.hx",
+		"/home/thomas/Prog/HAXE/FLX/Invisibros/source/TheGun.hx",
+		"/home/thomas/Prog/HAXE/FLX/Invisibros/Project.xml",
+		"/home/thomas/Prog/HAXE/FLX/TemplateTest/Project.xml",
+		"/home/thomas/Prog/HAXE/FLX/TemplateTest/source/entities/TheCloak.hx",
+		"/home/thomas/Prog/HAXE/FLX/TemplateTest/source/MenuState.hx",
+		"/usr/lib/haxe/lib/flixel/git/assets/sounds/flixel.mp3",
+		"/home/thomas/Prog/HAXE/PUNK/Circulation/src/Main.hx",
+		"/home/thomas/Prog/HAXE/PUNK/Circulation/src/MainScene.hx",
+		"/home/thomas/Prog/HAXE/PUNK/Circulation/project.xml",
+		"/home/thomas/Prog/HAXE/FLX/Invisibros/InvisiBros.xml",
+		"/home/thomas/Prog/HAXE/FLX/flixel-demos/Platformers/Mode/Project.xml",
+		"/home/thomas/Prog/HAXE/PUNK/Htmltest/project.xml",
+		"/home/thomas/Prog/HAXE/PUNK/TestProject/project.xml",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/Wall.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/ScoreBord.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/FP_[3]_VersusPong.as3proj",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/PU.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/PaletVFX.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/Palet.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/BalCopy.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/Bal.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/Countdown.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/Main.as",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/GameWorld.as",
+		"/home/thomas/Prog/HAXE/PUNK/TestProject/bin/android/bin/build.xml",
+		"/media/thomas/365CDC185CDBD0AB/Users/Gebruiker/Documents/Stuff/FlashPunk/FP_[3]_VersusPong/src/Aanmoedigingstekst.as",
+		"/home/thomas/Prog/HAXE/Invisibros/InvisiBros.xml",
+		"/home/thomas/Prog/HAXE/PUNK/TestProject/src/MainScene.hx",
+		"/home/thomas/Prog/HAXE/PUNK/TestProject/src/Player.hx",
+		"/home/thomas/Prog/HAXE/PUNK/TestProject/src/PlayerBody.hx",
+		"/home/thomas/Prog/Invisibru/main.lua",
+		"/home/thomas/Prog/Invisibru/Bullet.lua",
+		"/home/thomas/Prog/Invisibru/conf.lua",
+		"/home/thomas/Prog/HAXE/Invisibros/source/Main.hx",
+		"/home/thomas/Prog/Defenda/main.lua",
+		"/home/thomas/Prog/Invisibru/Sprite.lua",
+		"/home/thomas/Prog/Invisibru/Tools/Map.lua",
+		"/home/thomas/Prog/Invisibru/Tools/Tile.lua",
+		"/home/thomas/Prog/Invisibru/Tools/World.lua",
+		"/home/thomas/Prog/clge/Engine/Object.lua",
+		"/home/thomas/Prog/Invisibru/SmoothInput.lua",
+		"/home/thomas/Downloads/maple-modelopl-oefensessie-3.mw",
+		"/home/thomas/.cache/.fr-FRZL2n/BaseEngine/main.lua",
+		"/home/thomas/Downloads/maple-modelopl-oefensessie-2.mw",
+		"/home/thomas/.cache/.fr-T1PPO8/main.lua",
+		"/home/thomas/Prog/clge/Engine/World.lua",
+		"/home/thomas/Prog/Invisibru/SpecialGunman.lua",
+		"/home/thomas/Prog/Invisibru/Rectangle.lua",
+		"/home/thomas/.cache/.fr-g8LQVk/main.lua",
+		"/home/thomas/.cache/.fr-SjpWQS/menu.lua",
+		"/home/thomas/Prog/UI/main.lua",
+		"/home/thomas/Prog/Defenda/Engine/Button.lua",
+		"/home/thomas/Prog/UI/UIContainer.lua",
+		"/home/thomas/Prog/Defenda/Engine/States.lua",
+		"/home/thomas/Prog/States/main.lua",
+		"/home/thomas/Prog/States/Engine/Object.lua",
+		"/home/thomas/Prog/States/States.lua",
+		"/home/thomas/Prog/Defenda/Engine/Object.lua",
+		"/home/thomas/Prog/UI/UIElement.lua",
+		"/home/thomas/Prog/UI/OOP styles.lua",
+		"/home/thomas/Prog/UI/Tween.lua",
+		"/home/thomas/Prog/main.lua",
+		"/home/thomas/Prog/class.lua",
+		"/home/thomas/Prog/childClass.lua",
+		"/home/thomas/Prog/class = {}",
+		"/home/thomas/Prog/UI/copy from UIContainer.keypressed.txt",
+		"/home/thomas/Prog/Popper/Engine/Container.lua",
+		"/home/thomas/Prog/Popper/Engine/Vector2d.lua",
+		"/home/thomas/Prog/Defenda/Engine/Sprite.lua",
+		"/home/thomas/Prog/Defenda/Arrow.lua",
+		"/home/thomas/Prog/Defenda/ComboIcon.lua",
+		"/home/thomas/Prog/Defenda/ComboMenu.lua",
+		"/home/thomas/Prog/Defenda/ComboNumber.lua",
+		"/home/thomas/Prog/Defenda/Defender.lua",
+		"/home/thomas/Prog/Defenda/MinionRunner.lua",
+		"/home/thomas/Prog/Defenda/Stone.lua",
+		"/home/thomas/Prog/Defenda/StoneFragment.lua",
+		"/home/thomas/Prog/Defenda/Sword.lua",
+		"/home/thomas/Prog/Defenda/Engine/AnimationContainer.lua",
+		"/home/thomas/Prog/Defenda/ParticleEffect.lua",
+		"/home/thomas/Prog/Defenda/conf.lua",
+		"/home/thomas/Prog/Defenda/MinionSoldier.lua",
+		"/home/thomas/Prog/Defenda/Minion.lua",
+		"/home/thomas/Prog/Defenda/MinionCatcher.lua",
+		"/home/thomas/Prog/Defenda/minion.png",
+		"/home/thomas/Prog/Defenda/minion_catcher.png",
+		"/home/thomas/Prog/Defenda/Engine/Container.lua",
+		"/home/thomas/Prog/Defenda/Engine/Animation.lua",
+		"/home/thomas/Prog/Defenda/Engine/Particle.lua",
+		"/home/thomas/Prog/Defenda/Engine/ParticleContainer.lua",
+		"/home/thomas/Prog/Defenda/Engine/Calc.lua",
+		"/home/thomas/Prog/Popper/Engine/Particle.lua",
+		"/home/thomas/Prog/Popper/Engine/ParticleContainer.lua",
+		"/home/thomas/Prog/Popper/Engine/World.lua",
+		"/home/thomas/Prog/Popper/Engine/Calc.lua",
+		"/home/thomas/Prog/Popper/Engine/Sprite.lua",
+		"/home/thomas/Prog/Popper/Engine/README.txt",
+		"/home/thomas/Prog/Popper/conf.lua",
+		"/home/thomas/Prog/Popper/UIContainer.lua",
+		"/home/thomas/Prog/Popper/main.lua",
+		"/home/thomas/Prog/Defenda/FireParticle.lua",
+		"/home/thomas/Prog/Defenda/FireEmitter.lua"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/thomas/Prog/HAXE/PUNK/CloakNGun/src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"destroy",
+			"thegunsp",
+			"name",
+			"enter",
+			"ctrl+enter",
+			"enter",
+			"60",
+			"bullet",
+			"die",
+			"losegame",
+			"lose",
+			"losegame",
+			"wingame",
+			"facing",
+			"indic",
+			"18",
+			"running",
+			"shadow",
+			"keys",
+			"mouse",
+			"preloader",
+			"w1",
+			"cte",
+			"HUD",
+			"cte",
+			"reset",
+			"label",
+			"reset",
+			"ontractility",
+			"contractility",
+			"contractivity",
+			"HF",
+			"hf",
+			"rsF",
+			"resetsliders",
+			"deltaV.getCurrentValue",
+			"CO",
+			"co",
+			"freq",
+			"slagVolume",
+			"sportf",
+			"header",
+			"add(",
+			"deltav",
+			"w2",
+			"slagvolume",
+			";\n",
+			"onclick",
+			"label",
+			"txt",
+			"var",
+			"			addGraphic(new Text(Std.string(i*10)), 5, 620, 540 - i * 60);\n",
+			"string",
+			"			addGraphic(new Text(Std.string(i*10)), 5, 620, 540 - i * 60);\n",
+			"Q1",
+			"dto",
+			"cte",
+			"cter",
+			"rightBox",
+			"entity",
+			"current",
+			"graphlist",
+			"0",
+			"graphiclist",
+			"mousex",
+			"ping",
+			"20",
+			"hspeed",
+			");\n",
+			"cl",
+			"reset",
+			"bullets",
+			"emit",
+			"activate",
+			"jahoo",
+			"remote.data.games",
+			"updatemenu",
+			"uielement",
+			"Menustate",
+			"currentState",
+			"world",
+			"x",
+			"shop",
+			"print",
+			"setspeed",
+			"vy",
+			"climbSpeed",
+			"startVY",
+			"startvy",
+			"vy",
+			"combonumber",
+			"runner",
+			"house",
+			"fire",
+			"end",
+			"fire",
+			"Emitter",
+			"y",
+			"eb",
+			"Arrow",
+			"radius",
+			"ay",
+			"ru",
+			"break",
+			"superstone",
+			"~=",
+			"collide",
+			"maximum",
+			"cancarr",
+			"self",
+			"\n		",
+			"scale",
+			"f",
+			"defender",
+			"ctrl+q",
+			"qtrl+q",
+			"groundsens",
+			"rogue",
+			"ctrl+shift+b"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"contractility",
+			"HR",
+			"contractivity",
+			"header",
+			"freq",
+			"middleBox",
+			"BULLETS",
+			"ShopState",
+			"_current",
+			"climbSpeed",
+			"fireplace",
+			"FireEmitter",
+			"Defender",
+			"self"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/entities/TheCloak.hx",
+					"settings":
+					{
+						"buffer_size": 6723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 755.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/entities/TheGun.hx",
+					"settings":
+					{
+						"buffer_size": 8096,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 25.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/entities/BulletParticle.hx",
+					"settings":
+					{
+						"buffer_size": 1496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/MainScene.hx",
+					"settings":
+					{
+						"buffer_size": 2666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2661,
+								2661
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1305.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/menu/SelectMenu.hx",
+					"settings":
+					{
+						"buffer_size": 2063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								389,
+								389
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 990.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/entities/Bullet.hx",
+					"settings":
+					{
+						"buffer_size": 2397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/InputHandler.hx",
+					"settings":
+					{
+						"buffer_size": 4419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3275,
+								3275
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2508.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/entities/Snow.hx",
+					"settings":
+					{
+						"buffer_size": 1185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								896,
+								896
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"spell_check": true,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/entities/Trap.hx",
+					"settings":
+					{
+						"buffer_size": 1182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								992,
+								992
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/entities/GunsLockTrap.hx",
+					"settings":
+					{
+						"buffer_size": 892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								716,
+								716
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/entities/CloakGhost.hx",
+					"settings":
+					{
+						"buffer_size": 1329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1155,
+								1155
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 255.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.700006400409,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 269.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 246.0,
+	"status_bar_visible": true
+}

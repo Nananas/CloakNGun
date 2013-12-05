@@ -11,12 +11,7 @@ class Registry
 
 	static public function switchCC()
 	{
-		if (theCloakControllerNumber == 1){
-			theCloakControllerNumber = 0;
-			theGunControllerNumber = 1;
-		} else {
-			theCloakControllerNumber = 1;
-			theGunControllerNumber = 0;
-		}
+		theCloakControllerNumber = 1 - theCloakControllerNumber;
+		theGunControllerNumber = 1 - theGunControllerNumber;
 	}
 }

@@ -30,6 +30,8 @@ class Box extends Entity
 		type = "wall";
 
 		layer = Std.int(-(y+h));
+
+		active = false;
 	}
 	
 

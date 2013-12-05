@@ -13,9 +13,6 @@ class MainScene extends Scene
 {
 	private var theGun:TheGun;
 	private var theCloak:TheCloak;
-
-	private var _theGunSpeed:Float = 0.5;
-	private var _theCloakSpeed:Float = 0.3;
 	
 	private var PGText:Text;
 	private var PCText:Text; 
@@ -24,6 +21,8 @@ class MainScene extends Scene
 	private var PCEnt:Entity;
 
 	private var scoreText:Text;
+
+	private var snow : Snow;
 
 	public override function begin()
 	{
@@ -79,37 +78,83 @@ class MainScene extends Scene
 		var b:Box = new Box(Std.int(HXP.width - 80),Std.int(HXP.height - 60),40,20);
 		add(b);
 
+		Input.lastKey = 0;
 
+		snow = new Snow();
+		add(snow);
+	}
+
+	private function reset ()
+	{
+		// switchControllers
+		Registry.switchCC();
+
+		var gclist : Array<Dynamic> = new Array<Dynamic>();
+
+		theGun.reset();
+		theGun.x = HXP.width - 40;
+		theGun.y = HXP.height / 2;
+
+		theCloak.reset();
+		theCloak.x = 40;
+		theCloak.y = HXP.height / 2;
+
+		PGText.text = "P" + Registry.theGunControllerNumber + 1;
+		PGText.x = theGun.x;
+		PGText.y = theGun.y;
+		PGText.alpha = 1;
+
+		PCText.text = "P" + Registry.theCloakControllerNumber + 1;
+		PCText.x = theCloak.x;
+		PCText.y = theCloak.y;
+		PCText.alpha = 1;
+
+		scoreText.text = "P1: " +Registry.score[0] + "  |  P2: "+Registry.score[1];
+
+		getClass(BlueParticles, gclist);
+		getClass(GunsLockTrap, gclist);
+
+		for (i in gclist) {
+			remove(i);
+		}
 	}
 
 	public override function update()
 	{
-
-		// fade out those player numbers
-		PGText.alpha -= 0.01;
-		PGEnt.x = theGun.x; PGEnt.y = theGun.y;
-		PCText.alpha -= 0.01;
-		PCEnt.x = theCloak.x; PCEnt.y = theCloak.y;
-
-		if (PGText.alpha == 0){
-			remove(PGEnt);
-			remove(PCEnt);
+		if (PGText.alpha > 0)
+		{
+			// fade out those player numbers
+			PGText.alpha -= 0.02;
+			PGEnt.x = theGun.x; PGEnt.y = theGun.y;
+			PCText.alpha -= 0.02;
+			PCEnt.x = theCloak.x; PCEnt.y = theCloak.y;			
 		}
+
+		//if (PGText.alpha == 0){
+		//	remove(PGEnt);
+		//	remove(PCEnt);
+		//}
 
 		if (Input.lastKey == 16777234){
 			Input.lastKey = 0;
-			HXP.scene = new MainScene();
+			HXP.scene = new menu.SelectMenu();
 		}
 
 		if (theGun.finished && theCloak.finished){
-			// show end game stuff
 
-			HXP.scene = new MainScene();
-
-			// switchControllers
-			Registry.switchCC();
+			// restart scene
+			//HXP.scene = new MainScene();
+			reset();
+			
 		}
 
 		super.update();
+	}
+
+
+	// does a memory leak cause lag??
+	override public function end() : Void
+	{
+		removeAll();
 	}
 }

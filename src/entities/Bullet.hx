@@ -18,9 +18,16 @@ class Bullet extends Entity
 	private var vx:Float;
 	private var vy:Float;
 
-	public function new (X:Float, Y:Float, vX:Float, vY:Float, angle:Float)
+	private var _explode : Float->Float ->Void;
+	private var _emit : Float->Float ->Void;
+
+	public function new (X:Float, Y:Float, vX:Float, vY:Float, angle:Float,exp:Dynamic,em:Dynamic)
 	{
+		_explode = exp;
+		_emit = em;
+
 		super(X,Y);
+
 		setHitbox(6,6,3,3);
 		originX = 3;
 		originY = 3;
@@ -40,7 +47,6 @@ class Bullet extends Entity
 		vy = vY;
 
 		type = "bullet";
-
 	}
 
 	public override function added()
@@ -56,6 +62,8 @@ class Bullet extends Entity
 			tc.loseGame();
 			var tg:TheGun = cast(scene.getInstance("thegun"),TheGun);
 			tg.winGame();
+
+			explode();
 
 			scene.remove(this);
 			scene.remove(shadowEnt);
@@ -80,13 +88,14 @@ class Bullet extends Entity
 
 		// emit particles
 
-		var p:BulletParticle = new BulletParticle(x,y);
-		p.layer = layer;
-		scene.add(p);
-		var q:BulletParticle = new BulletParticle(x,y);
-		q.layer = layer;
-		scene.add(q);
-		
+		// var p:BulletParticle = new BulletParticle(x,y);
+		// p.layer = layer;
+		// scene.add(p);
+		// var q:BulletParticle = new BulletParticle(x,y);
+		// q.layer = layer;
+		// scene.add(q);
+		emit();
+
 		x += vx;
 		y += vy;
 		
@@ -105,11 +114,19 @@ class Bullet extends Entity
 		super.update();
 	}
 
-	private function explode(){
-		for (i in 0...20) {
-			var p:BulletParticle = new BulletParticle(x,y,3);
-			p.layer = layer;
-			scene.add(p);
-		}
+	private function explode()
+	{
+		// for (i in 0...20) {
+		// 	var p:BulletParticle = new BulletParticle(x,y,3);
+		// 	p.layer = layer;
+		// 	scene.add(p);
+		// }
+		_explode(x,y);
+			
+	}
+
+	private function emit()
+	{
+		_emit(x,y);
 	}
 }

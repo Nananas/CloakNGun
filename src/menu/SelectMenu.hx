@@ -9,6 +9,8 @@ import entities.TheCloak;
 import entities.TheGun;
 import entities.Box;
 
+import entities.Snow;
+
 
 class SelectMenu extends Scene
 {
@@ -19,6 +21,7 @@ class SelectMenu extends Scene
 	private var cloak 			:TheCloak;
 	private var gun 			:TheGun;
 
+	private var snow 			:Snow;
 
 	public override function begin ()
 	{
@@ -53,8 +56,9 @@ class SelectMenu extends Scene
 		var b:Box = new Box(Std.int(HXP.width/2 - 25), 0, 50, HXP.height);
 		add(b);
 
-		var trap:entities.GunsLockTrap = new entities.GunsLockTrap(140,Std.int(HXP.height/2)-50);
-		add(trap);
+
+		snow = new Snow();
+		add(snow);
 
 	}
 
@@ -69,6 +73,9 @@ class SelectMenu extends Scene
 
 			// switch c en c
 			Registry.switchCC();
+
+			// garbage collect
+			GC();
 			HXP.scene = new menu.SelectMenu();
 		}
 		
@@ -89,4 +96,10 @@ class SelectMenu extends Scene
 		super.update();
 	}
 
+	private function GC()
+	{
+		cloak = null;
+		gun = null;
+		snow = null;
+	}
 }

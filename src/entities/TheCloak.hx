@@ -12,13 +12,12 @@ class TheCloak extends Entity
 {
 	private var _dodgeTimer:Float = 2;
 	private var _dodgeSpeed:Float = 6;
-	private var _acc:Float = 0.2;
-	private var _maxSpeed:Float=0.4;
+	private var _acc:Float = 0.4;
+	private var _maxSpeed:Float=0.8;
 	private var image:Graphiclist;
 	private var animation:Spritemap;
 	private var shadow:Image;
 
-	private var running:Bool;
 	private var speed:Vector;
 
 	private var canDodge:Bool;
@@ -28,13 +27,23 @@ class TheCloak extends Entity
 	private var showTimer:Float;
 	private var runTimer:Int;
 	private var indicator:Image;
+	private var shadowIndicator:Image;
 
 	private var locked :Bool = false;
+
+	private var _shadow : CloakGhost;
+	private var _shadowTimer : Int;
+
+	private var idleTimer:Int = 0;
+
 	// end game flags
 	private var endgame:Bool;
 
 	public var finished:Bool;
 	public var controllerNumber:Int = 1;
+
+	private var _checkButtonPressed : Int -> Void;
+	private var _checkButtonReleased : Int -> Void;
 
 	public function new (X:Float, Y:Float)
 	{
@@ -56,8 +65,8 @@ class TheCloak extends Entity
 		animation.add("run",[1,2,3,4,5,6,7,8],12);
 		animation.add("walk",[1,2,3,4,5,6,7,8],8);
 		animation.add("slash",[9,10,11,12,13,0,0,0,0,0,0,0,0,0,0,0,0],12,false);
-		animation.add("stand",[0]);
 		animation.add("die",[14,15,16],1,false);
+		animation.add("stand",[0]);
 		animation.play("stand");
 
 		animation.alpha = 1;
@@ -70,50 +79,32 @@ class TheCloak extends Entity
 
 
 		indicator = Image.createRect(4,4,0x555555);
+		shadowIndicator = Image.createRect(2,2,0x555555);
 
-		running = false;
 		speed = new Vector(0,0);
 		canDodge = true;
 		dodgeTimer = 0;
 		hasToShow = true;
 		showTimer = 0;
-		
 
-		var checkButtonPressed = function(id:Int){
-			#if (!flash && !neko)
-				if (id == 0) {
-					running = true;
-				}else{
-					//trace("pressed something else : "+id);
-				}
-			#else
-				if (id==32){
-					running = true;
-				}else{
-					//trace ("pressed something else : "+id);
-				}
-			#end
+		_shadow = new CloakGhost();
+		_shadowTimer = 0;
+
+		_checkButtonPressed = function(id:Int){
+			if (id==9)
+			{
+
+				shootShadow();
+			}
 		}
 
-		var checkButtonReleased = function (id:Int){
-			#if (!flash && !neko)
-				if (id==0){
-					running = false;
-				}else{
-					//trace("relased something else: "+id);
-				}
-			#else
-				if (id==32){
-					running = false;
-				}else{
-					//trace("released something else: "+id);
-				}
-			#end
+		_checkButtonReleased = function (id:Int){
+
 		}
 
 		InputHandler.initButtons(Registry.theCloakControllerNumber, 
-								checkButtonPressed, 	
-								checkButtonReleased);
+								_checkButtonPressed, 	
+								_checkButtonReleased);
 
 		type = "thecloak";
 		name = "thecloak";
@@ -124,14 +115,26 @@ class TheCloak extends Entity
 
 	override public function added()
 	{
-		scene.addGraphic(indicator,-300,HXP.width/2 + 10, HXP.height - 20);
+		scene.addGraphic(indicator,-300,HXP.width/2 - 95, HXP.height - 10);
+		scene.addGraphic(shadowIndicator,-300,HXP.width/2 - 100, HXP.height - 10 + 1);
+		scene.add(_shadow);
 	}
+
 	override public function update()
 	{
 		if (!endgame){
+			if (_shadowTimer >= 0)
+			{
+				_shadowTimer --;
+				shadowIndicator.color = 0x000000;
+
+			} else {
+				shadowIndicator.color = 0xffffff;
+			}
+
 
 			// run logic
-			if (runTimer >= 0 && runTimer < 600 && InputHandler.eventAxis[Registry.theCloakControllerNumber][18] < 0.15){
+			if (runTimer >= 0 && runTimer < 600 && InputHandler.eventAxis[Registry.theCloakControllerNumber][17] < 0.15){
 				runTimer += 2;
 				indicator.color = 0x555555;
 			}else{
@@ -141,7 +144,7 @@ class TheCloak extends Entity
 			var extra:Int = 1;
 			if (runTimer >= 10){
 				// can run
-				if (InputHandler.eventAxis[Registry.theCloakControllerNumber][18] > 0.15){
+				if (InputHandler.eventAxis[Registry.theCloakControllerNumber][17] > 0.15){
 					extra = 4;
 					runTimer-= 10;
 				}
@@ -151,16 +154,25 @@ class TheCloak extends Entity
 			
 			// alpha calculations
 			if (extra == 4){
-				animation.alpha = 0.7;
+				animation.alpha = 0.5;
 				shadow.alpha = 0.2;
+				idleTimer = 10*30;
 			}else if (hasToShow || locked){
 				animation.alpha = 0.1;
 				shadow.alpha = 0.05;
+				idleTimer = 10*30;
 			}else if (speed.length < _maxSpeed * 2){
 				animation.alpha = 0;
 				shadow.alpha=0;
+				idleTimer--;
+				if (idleTimer < 0){
+					idleTimer = 10*30;
+					show();
+				}
 			}else{
 				animation.alpha = 0.05;
+				shadow.alpha = 0.03;
+				idleTimer = 10*30;
 			}
 
 			// dodge logic
@@ -171,7 +183,7 @@ class TheCloak extends Entity
 					dodge();
 				}
 			}else{
-				dodgeTimer -= 1/60;
+				dodgeTimer -= 1/30;
 				if (dodgeTimer < 0){
 					canDodge = true;
 				}
@@ -231,7 +243,7 @@ class TheCloak extends Entity
 			}
 			
 
-			if (showTimer >= 0) showTimer -= 1/60;
+			if (showTimer >= 0) showTimer -= 1/30;
 			if (showTimer < 0) hasToShow = false;
 		} else {
 			// the finishing strike should be visible ofc.
@@ -239,7 +251,7 @@ class TheCloak extends Entity
 
 			if (animation.complete){
 				finished = true;
-				animation.frame = 16;
+				animation.frame = 0;
 			}
 		}
 
@@ -249,7 +261,7 @@ class TheCloak extends Entity
 
 	public function show(){
 		hasToShow = true;
-		showTimer = 0.5;
+		showTimer = 0.3;
 
 	}
 
@@ -277,9 +289,19 @@ class TheCloak extends Entity
 		animation.play("die");
 	}
 
+	public function reset()
+	{
+		speed.x = 0;
+		speed.y = 0;
+		finished = false;
+		endgame = false;
+		InputHandler.initButtons(Registry.theCloakControllerNumber, 
+								_checkButtonPressed, 	
+								_checkButtonReleased);
+	}
+
 	public function lock(){ locked = true;}
 	public function unlock(){locked = false;}
-
 
 	// ------------------------------
 	//--------------------------------
@@ -290,6 +312,19 @@ class TheCloak extends Entity
 		v.normalize(1);
 		speed.x += v.x * _dodgeSpeed;
 		speed.y += v.y * _dodgeSpeed;
+	}
+
+	private function shootShadow()
+	{
+		if (_shadowTimer < 0)
+		{
+			var sp : Vector = new Vector(speed.x, speed.y);
+			sp.normalize(_maxSpeed*4);
+
+			_shadow.shoot(x,y,sp.x, sp.y);
+			
+			_shadowTimer = 30*10;
+		}
 	}
 
 	private function sign(i:Dynamic):Int{
