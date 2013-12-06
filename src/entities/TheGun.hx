@@ -243,7 +243,6 @@ class TheGun extends Entity
 
 			// gun position logic
 			gunEntity.x = x + 1 + originOffset;
-			trace(originOffset);
 			gunEntity.y = y + 7;
 
 			// end game logic

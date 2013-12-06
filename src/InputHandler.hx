@@ -23,6 +23,11 @@ class OuyaKey
 	public var key_y 	:Bool = false;
 	public var key_a 	:Bool = false;
 
+	public var justPressed_key_o 	:Bool = false;
+	public var justPressed_key_u 	:Bool = false;
+	public var justPressed_key_y 	:Bool = false;
+	public var justPressed_key_a 	:Bool = false;
+
 	public function new(){};
 
 	public function keySet(id:Int, b:Bool = true){
@@ -53,6 +58,44 @@ class OuyaKey
 			return false;
 		}
 	}
+
+	public function setJustPressed(id : Int) {
+		switch (id) {
+			case OuyaKeyCode.KEY_O:
+				justPressed_key_o = true;
+			case OuyaKeyCode.KEY_U:
+				justPressed_key_u = true;
+			case OuyaKeyCode.KEY_Y:
+				justPressed_key_y = true;
+			case OuyaKeyCode.KEY_A:
+				justPressed_key_a = true;
+			default:
+		}
+	}
+
+	public function getJustPressed(id : Int) {
+		switch (id) {
+			case OuyaKeyCode.KEY_O:
+				return justPressed_key_o;
+			case OuyaKeyCode.KEY_U:
+				return justPressed_key_u;
+			case OuyaKeyCode.KEY_Y:
+				return justPressed_key_y;
+			case OuyaKeyCode.KEY_A:
+				return justPressed_key_a;
+			default:
+			return false;
+		}
+	}
+
+	public function resetJustPressed()
+	{
+		justPressed_key_o = false;
+		justPressed_key_u = false;
+		justPressed_key_y = false;
+		justPressed_key_a = false;
+	}
+
 	public function toString():String{
 		return "O: "+key_o + " |U: "+key_u+" |Y: "+key_y+" |A: "+key_a;
 	}
@@ -108,13 +151,16 @@ class InputHandler
 			HXP.stage.addEventListener(JoystickEvent.BUTTON_UP, onJoystickButtonUp);
 			
 			initedButtons = true;
-			
 		}
 
 		buttonDownFunctions[player] = funcDown;
 		buttonUpFunctions[player] = funcUp;
 	}
 
+	public static function wasButtonJustPressed(id : Int, player : Int = 0)
+	{
+		return OuyaKeys[player].getJustPressed(id);
+	}
 
 	public static function getAxis(player:Int, LeftOrRight:Int = 0):Vector{
 		// check player number
@@ -139,33 +185,38 @@ class InputHandler
 		return OuyaKeys[player].getKey(id);
 	}
 
-
 	private static function onJoystickButtonDown(e:JoystickEvent):Void{
 		if (!initedButtons) 
 			return;
 		var player = OuyaController.getPlayerNumByDeviceId(e.device);
-		if (buttonDownFunctions[player] == null) {
+		/*if (buttonDownFunctions[player] == null) {
 			return;
-		}
+		}*/
 		// adding button to list
 		OuyaKeys[player].keySet(e.id);
-
+		OuyaKeys[player].setJustPressed(e.id);
 		// calling callback function
-		buttonDownFunctions[player](e.id);
+		if (buttonDownFunctions[player] != null)
+		{
+			buttonDownFunctions[player](e.id);
+		}
 	}
 	private static function onJoystickButtonUp(e:JoystickEvent):Void{
 		if (!initedButtons)
 			return;
 		var player = OuyaController.getPlayerNumByDeviceId(e.device);
-		if (buttonUpFunctions[player] == null){
+		/*if (buttonUpFunctions[player] == null){
 			return;
-		}
+		}*/
 
 		// removing button from list
 		OuyaKeys[player].keySet(e.id, false);
 
 		// calling callback function
-		buttonUpFunctions[player](e.id);
+		if (buttonUpFunctions[player] != null)
+		{
+			buttonUpFunctions[player](e.id);
+		}
 	}
 	private static function onJoystickMove(e:JoystickEvent){
 		var player = OuyaController.getPlayerNumByDeviceId(e.device);
@@ -179,6 +230,11 @@ class InputHandler
 		eventAxis[player] = e.axis;
 	}
 
+	public static function update ()
+	{
+		OuyaKeys[0].resetJustPressed();
+		OuyaKeys[1].resetJustPressed();
+	}
 }
 
 #end

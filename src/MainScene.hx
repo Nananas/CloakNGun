@@ -6,6 +6,7 @@ import com.haxepunk.graphics.Text;
 import com.haxepunk.utils.Input;
 
 import entities.*;
+import Registry.Maps;
 import InputHandler;
 
 
@@ -47,36 +48,8 @@ class MainScene extends Scene
 		scoreText.size = 24;
 		addGraphic(scoreText,1,HXP.width / 2,10);
 
-		// 
-		var b:Box = new Box(0,-10,HXP.width,20);
-		add(b);
-
-		var b:Box = new Box(0,0,5,HXP.height);
-		add(b);
-
-		var b:Box = new Box(0,HXP.height - 10, HXP.width, 20);
-		add(b);
-
-		var b:Box = new Box(HXP.width - 5, 0, 5, HXP.height);
-		add(b);
-
-		var b:Box = new Box(Std.int(HXP.width/2 - 10), Std.int(HXP.height/2 - 50),20,100);
-		add(b);
-
-		var b:Box = new Box(Std.int(HXP.width/2 - 50), Std.int(HXP.height/2 - 10),100,20);
-		add(b);
-
-		var b:Box = new Box(40,40,40,20);
-		add(b);
-
-		var b:Box = new Box(Std.int(HXP.width - 80),40,40,20);
-		add(b);
-
-		var b:Box = new Box(40,Std.int(HXP.height - 60),40,20);
-		add(b);
-
-		var b:Box = new Box(Std.int(HXP.width - 80),Std.int(HXP.height - 60),40,20);
-		add(b);
+		//build chosen map 
+		Registry.currentMap.build(this);
 
 		Input.lastKey = 0;
 
@@ -116,6 +89,16 @@ class MainScene extends Scene
 
 		for (i in gclist) {
 			remove(i);
+		}
+
+		if (Registry.loopMaps)
+		{
+			// remove last map
+			Registry.currentMap.remove(this);
+
+			// build next map
+			Registry.nextMap();
+			Registry.currentMap.build(this);
 		}
 	}
 
