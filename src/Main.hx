@@ -9,7 +9,8 @@ class Main extends Engine
 #if debug
 		HXP.console.enable();
 #end
-		HXP.scene = new menu.SelectMenu();
+		Registry.loadScenes();
+		HXP.scene = Registry.selectScene;
 	}
 
 	public static function main() { new Main(400,225,60); }

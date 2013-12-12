@@ -1,12 +1,11 @@
-
-package entities;
+package entities.effects;
 
 import com.haxepunk.Entity;
 import com.haxepunk.graphics.Image;
 import com.haxepunk.HXP;
 import com.haxepunk.graphics.Emitter;
 
-class Snow extends Entity
+class Snow extends WeatherEffect
 {
 	private var _speed : Float;
 	private var _emitter : Emitter;
@@ -30,12 +29,13 @@ class Snow extends Entity
 		_emitter.setMotion("three", 260, 40, 5, 20, HXP.height+60, 10);
 		_emitter.setAlpha("three", 0.7, 0);
 
-		super(0,0,_emitter);
+		super(_emitter);
 
 		layer = -400;
+		
 	}
 
-	public override function update ()
+	public override function tick ()
 	{
 		_timer --;
 		if (_timer < 0)

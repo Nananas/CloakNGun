@@ -6,8 +6,9 @@ import com.haxepunk.graphics.Text;
 import com.haxepunk.utils.Input;
 
 import entities.*;
+import entities.effects.Effect;
+import entities.effects.Effect.Effects;
 import Registry.Maps;
-import InputHandler;
 
 
 class MainScene extends Scene
@@ -23,11 +24,15 @@ class MainScene extends Scene
 
 	private var scoreText:Text;
 
-	private var snow : Snow;
+	private var effect : Effect;
 
 	public override function begin()
 	{
-		trace("beginning game");
+		reset();
+	}
+
+	public function init()
+	{
 		//InputHandler.init(2);
 
 		theGun = new TheGun(HXP.width-40, HXP.height/2);
@@ -53,15 +58,12 @@ class MainScene extends Scene
 
 		Input.lastKey = 0;
 
-		snow = new Snow();
-		add(snow);
+		effect = new Effect(Effects.SNOW);
+		add(effect);
 	}
 
 	private function reset ()
 	{
-		// switchControllers
-		Registry.switchCC();
-
 		var gclist : Array<Dynamic> = new Array<Dynamic>();
 
 		theGun.reset();
@@ -91,7 +93,7 @@ class MainScene extends Scene
 			remove(i);
 		}
 
-		if (Registry.loopMaps)
+/*		if (Registry.loopMaps)
 		{
 			// remove last map
 			Registry.currentMap.remove(this);
@@ -100,6 +102,8 @@ class MainScene extends Scene
 			Registry.nextMap();
 			Registry.currentMap.build(this);
 		}
+*/	
+		Registry.nextMap(this);
 	}
 
 	public override function update()
@@ -120,24 +124,18 @@ class MainScene extends Scene
 
 		if (Input.lastKey == 16777234){
 			Input.lastKey = 0;
-			HXP.scene = new menu.SelectMenu();
+			HXP.scene = Registry.selectScene;
 		}
 
 		if (theGun.finished && theCloak.finished){
+			// switch the controllers
+			Registry.switchCC();
 
 			// restart scene
-			//HXP.scene = new MainScene();
 			reset();
 			
 		}
-
+		
 		super.update();
-	}
-
-
-	// does a memory leak cause lag??
-	override public function end() : Void
-	{
-		removeAll();
 	}
 }

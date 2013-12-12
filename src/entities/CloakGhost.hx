@@ -85,4 +85,9 @@ class CloakGhost extends Entity
 			_image.originX = -2;
 		}
 	}
+
+	public function setColor(c : UInt)
+	{
+		_image.color = c;
+	}
 }

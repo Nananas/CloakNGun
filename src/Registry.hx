@@ -39,6 +39,24 @@ class Maps
 
 class Registry 
 {
+	static public var selectScene : menu.SelectMenu;
+	static public var playScene : MainScene;
+
+	static public var tiles_Top : flash.display.BitmapData;
+	static public var tiles_Wall : flash.display.BitmapData;
+
+	static public function loadScenes()
+	{
+		// load tiles
+		tiles_Top = openfl.Assets.getBitmapData("graphics/Tiles_Top.png");
+		tiles_Wall = openfl.Assets.getBitmapData("graphics/Tiles_Wall.png");
+
+		selectScene = new menu.SelectMenu();
+		selectScene.init();
+		playScene = new MainScene();
+		playScene.init();
+	}
+
 
 	static public var theCloakControllerNumber:Int = 1;
 	static public var theGunControllerNumber:Int = 0;
@@ -66,12 +84,37 @@ class Registry
 	}
 
 	public static var loopMaps : Bool = true;
-	public static function nextMap()
+	private static var loopCount : Int = 1;
+	public static function nextMap(scene : Scene) : Void
 	{ 
+		if (loopMaps)
+		{
+			// let both players play as both characters in each map
+			loopCount ++;
+			if (loopCount > 2)
+			{
+				loopCount = 1;
+				// remove last map
+				currentMap.remove(scene);
+				
+				changeCurrentMap();
+
+				// build new map
+				currentMap.build(scene);
+			}
+		}
+	}
+
+	public static function changeCurrentMap()
+	{
 		currentMapID ++;
 		if (currentMapID > Maps.mapCount) currentMapID = 1;
 		currentMap = getMapByID(currentMapID);
 	}
+
+	public static var cloakSkill : Int = 1;
+	public static var gunSkill : Int = 1;
+
 }
 
 

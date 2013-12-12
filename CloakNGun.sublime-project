@@ -2,14 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "/home/thomas/Prog/HAXE/PUNK/CloakNGun"
-		}
-	],
-
-	"build_systems":
-	[
-		{
-			"cmd": "openfl test android"
+			"path": "/C/Users/Gebruiker/Documents/GitHub/CloakNGun"
 		}
 	]
 }

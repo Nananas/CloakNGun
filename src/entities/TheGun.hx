@@ -16,9 +16,9 @@ import entities.GunsLockTrap;
 
 class TheGun extends Entity
 {
-	private var _bulletVelocity:Float = 10;
-	private var _acc:Float = 0.5;
-	private var _maxSpeed:Float = 2;
+	private var _bulletVelocity:Float = 5;
+	private var _acc:Float = 0.3;
+	private var _maxSpeed:Float = 1;
 
 	private var animation:Spritemap;
 	private var speed:Vector;
@@ -31,7 +31,7 @@ class TheGun extends Entity
 	private var shadow:Image;
 
 	private var shootTimer:Float;
-	private var _shootTimer:Float = 1.5;
+	private var _shootTimer:Float = 3;
 	private var canShoot:Bool;
 
 	private var originOffset:Int;
@@ -209,7 +209,7 @@ class TheGun extends Entity
 			}
 
 			// animate
-			if (speed.length > 0.5){
+			if (speed.length > 0.2){
 				animation.play("walk", false);
 			} else {
 				animation.play("stand");
@@ -286,7 +286,6 @@ class TheGun extends Entity
 			var q : BulletParticle = inactiveParticles.pop();
 			particleContainer.push(q);
 			q.emit(xx,yy);
-			trace(inactiveParticles.length);
 		}
 	}
 

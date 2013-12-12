@@ -7,7 +7,8 @@ import com.haxepunk.HXP;
 import entities.TheCloak;
 import entities.TheGun;
 import entities.Box;
-import entities.Snow;
+import entities.effects.Effect;
+import entities.effects.Effect.Effects;
 
 import Registry.Maps;
 
@@ -23,10 +24,15 @@ class SelectMenu extends Scene
 	private var cloak 			:TheCloak;
 	private var gun 			:TheGun;
 
-	private var snow 			:Snow;
+	private var effect 			:Effect;
 	private var _currentMapID 	:Int = 1;
 
-	public override function begin ()
+	public override function begin()
+	{
+		reset();
+	}
+
+	public function init ()
 	{
 		trace("startup SelectMenu");
 
@@ -42,6 +48,8 @@ class SelectMenu extends Scene
 
 		InputHandler.init(2);
 
+		Registry.cloakSkill = 1;
+
 		// create cloak and gun, so the joysticks are initialised
 		cloak = new TheCloak(70,HXP.height/2);
 		gun = new TheGun(HXP.width - 70, HXP.height/2);
@@ -51,25 +59,37 @@ class SelectMenu extends Scene
 		// wall between them and around
 		var b:Box = new Box(0,0,HXP.width,50); 		//top
 		add(b);
-		var b:Box = new Box(0,0,50,HXP.height);		//left
+		var b:Box = new Box(0,0,50,HXP.height+10);		//left
 		add(b);
-		var b:Box = new Box(0,HXP.height - 50, 120, 50); 	//bottom
+		var b:Box = new Box(0,HXP.height - 50, 120, 50+6); 	//bottom
 		add(b);
-		var b:Box = new Box(HXP.width - 120, HXP.height - 50, 120, 50); 	// bottom small
+		var b:Box = new Box(HXP.width - 120, HXP.height - 50, 120, 50+10); 	// bottom small
 		add(b);
-		var b:Box = new Box(0,HXP.height - 20,HXP.width,25);	// bottom small ?
+		//var b:Box = new Box(0,HXP.height - 20,HXP.width,25);	// bottom small ?
+		//add(b);
+		var b:Box = new Box(HXP.width - 50, 0, 50, HXP.height+10); 	// right
 		add(b);
-		var b:Box = new Box(HXP.width - 50, 0, 50, HXP.height); 	// right
-		add(b);
-		var b:Box = new Box(Std.int(HXP.width/2 - 25), 0, 50, HXP.height); // middle
+		var b:Box = new Box(Std.int(HXP.width/2 - 25), 0, 50, HXP.height+200); // middle
 		add(b);
 
 
-		snow = new Snow();
-		add(snow);
+		effect = new Effect(Effects.RAIN);
+		add(effect);
 
 		// load all other maps, this can ofc change if it takes too long to load
 		Maps.loadMaps();
+	}
+
+	public function reset()
+	{
+		cloak.reset();
+		gun.reset();
+
+		cloak.x = 70;
+		cloak.y = HXP.height / 2;
+
+		gun.x = HXP.width - 70;
+		gun.y = HXP.height / 2;
 	}
 
 	public override function update ()
@@ -85,9 +105,7 @@ class SelectMenu extends Scene
 			// switch c en c
 			Registry.switchCC();
 
-			// garbage collect
-			GC();
-			HXP.scene = new menu.SelectMenu();
+			reset();
 		}
 
 		// change maps
@@ -101,17 +119,20 @@ class SelectMenu extends Scene
 			setNextmapMethod();
 		}
 
-		// check for ready state
-		if (cloak.y > 180){
-			trace("cloak ready");
-		}
-		if (gun.y > 180){
-			trace("gun ready");
+		if (InputHandler.wasButtonJustPressed(InputHandler.OuyaKeyCode.KEY_U, Registry.theCloakControllerNumber))
+		{
+			// switch skill of cloak
+			cloak.switchSkill();
 		}
 
-		if (cloak.y > 180 && gun.y > 180){
-			trace("lets go");
-			HXP.scene = new MainScene();
+		if (cloak.y > 230)
+			cloak.y = 260;
+
+		if (gun.y > 230)
+			gun.y = 260;
+
+		if (cloak.y > 200 && gun.y > 200){
+			HXP.scene = Registry.playScene;
 		}
 
 		InputHandler.update();
@@ -122,12 +143,12 @@ class SelectMenu extends Scene
 	{
 		cloak = null;
 		gun = null;
-		snow = null;
+		effect = null;
 	}
 
 	private function setNextMap()
 	{
-		Registry.nextMap();
+		Registry.changeCurrentMap();
 		mapName.text = Registry.currentMap.getName();
 	}
 

@@ -59,14 +59,21 @@ class Bullet extends Entity
 	{
 		if (collide("thecloak",x,y) != null){
 			var tc:TheCloak = cast(collide("thecloak",x,y), TheCloak);
-			tc.loseGame();
-			var tg:TheGun = cast(scene.getInstance("thegun"),TheGun);
-			tg.winGame();
+			
+			// check if the cloak is currently not immune to bullets
+			trace(tc.isImmune());
+			if (!tc.isImmune())
+			{
+				tc.loseGame();
+				var tg:TheGun = cast(scene.getInstance("thegun"),TheGun);
+				tg.winGame();
 
-			explode();
-
-			scene.remove(this);
-			scene.remove(shadowEnt);
+				// explode the bullet and remove it
+				explode();
+				scene.remove(this);
+				scene.remove(shadowEnt);
+				
+			}
 		}
 
 		if (collide("wall",x,y) != null){
@@ -85,15 +92,6 @@ class Bullet extends Entity
 			}
 			setHitbox(6,6,3,3);
 
-
-		// emit particles
-
-		// var p:BulletParticle = new BulletParticle(x,y);
-		// p.layer = layer;
-		// scene.add(p);
-		// var q:BulletParticle = new BulletParticle(x,y);
-		// q.layer = layer;
-		// scene.add(q);
 		emit();
 
 		x += vx;

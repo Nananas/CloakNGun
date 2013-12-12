@@ -10,10 +10,10 @@ import com.haxepunk.HXP;
 
 class TheCloak extends Entity
 {
-	private var _dodgeTimer:Float = 2;
+	private var _dodgeTimer:Float = 3;
 	private var _dodgeSpeed:Float = 6;
 	private var _acc:Float = 0.4;
-	private var _maxSpeed:Float=0.8;
+	private var _maxSpeed:Float=0.4;
 	private var image:Graphiclist;
 	private var animation:Spritemap;
 	private var shadow:Image;
@@ -26,13 +26,17 @@ class TheCloak extends Entity
 	private var hasToShow:Bool;
 	private var showTimer:Float;
 	private var runTimer:Int;
+	private var _isRunning : Bool;
+	private var _shadow : CloakGhost;
+	private var _skillTimer : Int;
+	private var _telePosition : Vector;
+
 	private var indicator:Image;
-	private var shadowIndicator:Image;
+	private var _skillIndicator:Image;
+	private var teleIndicator : Image;
 
 	private var locked :Bool = false;
 
-	private var _shadow : CloakGhost;
-	private var _shadowTimer : Int;
 
 	private var idleTimer:Int = 0;
 
@@ -44,6 +48,8 @@ class TheCloak extends Entity
 
 	private var _checkButtonPressed : Int -> Void;
 	private var _checkButtonReleased : Int -> Void;
+
+	private var _skillID : Int;
 
 	public function new (X:Float, Y:Float)
 	{
@@ -72,29 +78,33 @@ class TheCloak extends Entity
 		animation.alpha = 1;
 		animation.originX = 2;
 		animation.originY = 5;
+
 		image.add(animation);
 		
-
 		graphic = image;
 
 
+		_shadow = new CloakGhost();
 		indicator = Image.createRect(4,4,0x555555);
-		shadowIndicator = Image.createRect(2,2,0x555555);
+		_skillIndicator = Image.createRect(2,2,0x555555);
+		_skillTimer = 0;
+		_skillID = Registry.cloakSkill;
+		setColor();
+		_telePosition = new Vector(0,0);
 
 		speed = new Vector(0,0);
 		canDodge = true;
 		dodgeTimer = 0;
 		hasToShow = true;
 		showTimer = 0;
+		_isRunning = false;
 
-		_shadow = new CloakGhost();
-		_shadowTimer = 0;
 
 		_checkButtonPressed = function(id:Int){
 			if (id==9)
 			{
-
-				shootShadow();
+				doSkill();
+				//shootShadow();
 			}
 		}
 
@@ -111,27 +121,43 @@ class TheCloak extends Entity
 
 		endgame = false;
 		finished = false;
+
 	}
 
 	override public function added()
 	{
 		scene.addGraphic(indicator,-300,HXP.width/2 - 95, HXP.height - 10);
-		scene.addGraphic(shadowIndicator,-300,HXP.width/2 - 100, HXP.height - 10 + 1);
-		scene.add(_shadow);
+		if (_skillID == 1 || _skillID == 3) 	// ghost or teleport
+		{
+			scene.addGraphic(_skillIndicator,-300,HXP.width/2 - 100, HXP.height - 10 + 1);
+			scene.add(_shadow);
+		}
 	}
 
 	override public function update()
 	{
 		if (!endgame){
-			if (_shadowTimer >= 0)
+			if (_skillID == 1 || _skillID == 3) 	// ghost or teleport
 			{
-				_shadowTimer --;
-				shadowIndicator.color = 0x000000;
+				if (_skillTimer >= 0) 	// unable to do skill
+				{
+					_skillTimer --;
+					_skillIndicator.color = 0x000000;
 
-			} else {
-				shadowIndicator.color = 0xffffff;
+				} else {				// able to do skill
+					if (_skillID == 3){ // if skill is teleport, show indication of active positino
+						if (_telePosition.length > 0){
+							// active
+							_skillIndicator.color = 0x555555;
+						} else {
+							// position still needs to be set
+							_skillIndicator.color = 0xffffff;
+						}
+					} else if (_skillID== 1){
+						_skillIndicator.color = 0xffffff;
+					}
+				}
 			}
-
 
 			// run logic
 			if (runTimer >= 0 && runTimer < 600 && InputHandler.eventAxis[Registry.theCloakControllerNumber][17] < 0.15){
@@ -150,18 +176,23 @@ class TheCloak extends Entity
 				}
 			}
 
+			if (extra == 4)
+				_isRunning = true;
+			else
+				_isRunning = false;
+
 			if (runTimer > 300)	indicator.color = 0xffffff;
 			
 			// alpha calculations
-			if (extra == 4){
+			if (extra == 4){ 	// running
 				animation.alpha = 0.5;
 				shadow.alpha = 0.2;
 				idleTimer = 10*30;
-			}else if (hasToShow || locked){
+			}else if (hasToShow || locked){ 	// trapped or selectscreen
 				animation.alpha = 0.1;
 				shadow.alpha = 0.05;
 				idleTimer = 10*30;
-			}else if (speed.length < _maxSpeed * 2){
+			}else if (speed.length < _maxSpeed * 2){	// invisible
 				animation.alpha = 0;
 				shadow.alpha=0;
 				idleTimer--;
@@ -169,7 +200,7 @@ class TheCloak extends Entity
 					idleTimer = 10*30;
 					show();
 				}
-			}else{
+			}else{ 			// dashing (speed > maxspeed * 2)
 				animation.alpha = 0.05;
 				shadow.alpha = 0.03;
 				idleTimer = 10*30;
@@ -227,10 +258,10 @@ class TheCloak extends Entity
 			// animation, VFX logic
 			if (speed.length < 0.05){
 				animation.play("stand");
-			}else if (speed.length > _maxSpeed*2){
-				animation.play("run");
+			}else if (_isRunning){
+				animation.play("run",false);
 			}else{
-				animation.play("walk");
+				animation.play("walk",false);
 			}
 
 			// change only when moving
@@ -262,9 +293,12 @@ class TheCloak extends Entity
 	public function show(){
 		hasToShow = true;
 		showTimer = 0.3;
-
 	}
 
+	public function isImmune() : Bool
+	{
+		return (_skillID==2 && speed.length > _maxSpeed && !_isRunning);
+	}
 
 	public function winGame(facing:Int){
 		endgame = true;
@@ -293,11 +327,32 @@ class TheCloak extends Entity
 	{
 		speed.x = 0;
 		speed.y = 0;
+
+		// reset teleport
+		_telePosition.x = 0;
+		_telePosition.y = 0;
+
 		finished = false;
 		endgame = false;
+		
 		InputHandler.initButtons(Registry.theCloakControllerNumber, 
 								_checkButtonPressed, 	
 								_checkButtonReleased);
+
+		_skillID = Registry.cloakSkill;
+	}
+
+	public function switchSkill ()
+	{
+		_skillID ++;
+		if (_skillID>3)
+		{
+			_skillID = 1;
+		}
+
+		setColor();
+
+		Registry.cloakSkill = _skillID;
 	}
 
 	public function lock(){ locked = true;}
@@ -314,16 +369,70 @@ class TheCloak extends Entity
 		speed.y += v.y * _dodgeSpeed;
 	}
 
+	private function doSkill()
+	{
+		if (_skillTimer < 0)
+		{
+			if (_skillID == 1){	// ghost
+				shootShadow();
+				_skillTimer = 30*10;
+			} else if (_skillID == 3)	// teleport
+				doTeleport();
+			
+		}
+
+
+		// dodge roll is not an active skill
+		// so do nothing
+	}
+
 	private function shootShadow()
 	{
-		if (_shadowTimer < 0)
-		{
-			var sp : Vector = new Vector(speed.x, speed.y);
-			sp.normalize(_maxSpeed*4);
+		var sp : Vector = new Vector(speed.x, speed.y);
+		sp.normalize(_maxSpeed*4);
 
-			_shadow.shoot(x,y,sp.x, sp.y);
-			
-			_shadowTimer = 30*10;
+		_shadow.shoot(x,y,sp.x, sp.y);
+	}
+
+	private function doTeleport()
+	{
+		// set teleport or teleport to position
+		trace("teleporting");
+
+		if (_telePosition.length == 0)
+		{
+			// set next teleport position
+			_telePosition.x = x;
+			_telePosition.y = y;
+		} else {
+			//teleport to the set teleport position
+			x = _telePosition.x;
+			y = _telePosition.y;
+
+			// reset last teleport position
+			_telePosition.x = 0;
+			_telePosition.y = 0;
+
+			// only set timer when actually teleporting
+			_skillTimer = 30*10;
+
+			// show for an instant
+			show();
+		}
+	}
+
+	private function setColor()
+	{
+		switch (_skillID) {
+			case 1: // ghost
+				animation.color = 0xffffff;
+				_shadow.setColor(0xffffff);
+			case 2: // dodge roll
+				animation.color = 0xDBAB76;
+				_shadow.setColor(0xDBAB76);
+			case 3: // teleport
+				animation.color = 0x71DB53;
+				_shadow.setColor(0x71DB53);
 		}
 	}
 

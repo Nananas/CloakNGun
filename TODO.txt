@@ -1,4 +1,26 @@
+=========   TODO   ========
 
-* traps and stuff to buff the players:
-	- hologram (cloak)
-	- trap (gun)
+** Gun skills: grenade / 
+** smoke at begin point of a teleport jump // show cloakguy an instant during teleport
+
+* multiple effects after each other.
+
+* UI
+* tiles + logic, themes
+* more maps
+* more effects?
+
+=======   DONE   =======
+
+* shadows beneath cloak and gun
+** rain should fall more
+*** using a scene manager and switching between these instead of making a brand new one
+ 			-> should hopefully solve the lag issues :: yep ::
+
+
+
+
+
+
+
+[[[ SHOULD I REWRITE THIS GAME IN A HIGHER RESOLUTION?]]]

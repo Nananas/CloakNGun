@@ -19,7 +19,7 @@ class Trap extends Entity
 
 		graphic = image;
 
-		setHitbox(15,10);
+		setHitbox(16,12);
 		centerOrigin();
 
 		trackType = track;

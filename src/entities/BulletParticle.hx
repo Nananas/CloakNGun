@@ -18,7 +18,14 @@ class BulletParticle extends Entity
 	{
 		super(X,Y);
 		setHitbox(2,2);
-		image = Image.createRect(2,2,0x345678);
+		// randomise color a bit
+		if (Math.random()*3>2)
+			image = Image.createRect(2,2,0x345678);
+		else if (Math.random()*2>1)
+			image = Image.createRect(2,2,0x343678);
+		else
+			image = Image.createRect(2,2,0x346578);
+			
 		graphic = image;
 
 		speed = new Vector(0,0);
