@@ -95,7 +95,7 @@
 			"file": "src/menu/SelectMenu.hx",
 			"settings":
 			{
-				"buffer_size": 3606,
+				"buffer_size": 3601,
 				"line_ending": "Windows"
 			}
 		},
@@ -111,7 +111,7 @@
 			"file": "src/InputHandler.hx",
 			"settings":
 			{
-				"buffer_size": 5775,
+				"buffer_size": 5843,
 				"line_ending": "Windows"
 			}
 		},
@@ -156,18 +156,18 @@
 			}
 		},
 		{
-			"file": "src/entities/Trap.hx",
+			"file": "src/entities/Box.hx",
 			"settings":
 			{
-				"buffer_size": 1182,
+				"buffer_size": 1750,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/entities/Box.hx",
+			"file": "src/entities/Smoke.hx",
 			"settings":
 			{
-				"buffer_size": 1767,
+				"buffer_size": 141,
 				"line_ending": "Windows"
 			}
 		}
@@ -200,8 +200,8 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/MainScene.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Trap.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/MainScene.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/Main.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/effects/Effect.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/project.xml",
@@ -225,7 +225,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"C:\\Users\\Gebruiker\\Documents\\GitHub\\CloakNGun\\src, *.hx"
@@ -236,6 +236,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"init",
+			"scale",
 			"5",
 			"var",
 			"			",
@@ -298,7 +300,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -313,8 +315,8 @@
 						"selection":
 						[
 							[
-								1432,
-								1432
+								794,
+								794
 							]
 						],
 						"settings":
@@ -361,15 +363,15 @@
 					"file": "src/menu/SelectMenu.hx",
 					"settings":
 					{
-						"buffer_size": 3606,
+						"buffer_size": 3601,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1548,
-								1548
+								2047,
+								2047
 							]
 						],
 						"settings":
@@ -379,7 +381,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 756.0,
+						"translation.y": 210.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -396,8 +398,8 @@
 						"selection":
 						[
 							[
-								8945,
-								8945
+								760,
+								760
 							]
 						],
 						"settings":
@@ -407,7 +409,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5141.0,
+						"translation.y": 142.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -417,15 +419,15 @@
 					"file": "src/InputHandler.hx",
 					"settings":
 					{
-						"buffer_size": 5775,
+						"buffer_size": 5843,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2908,
+								2908
 							]
 						],
 						"settings":
@@ -435,7 +437,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2604.0,
+						"translation.y": 1512.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -536,8 +538,8 @@
 						"selection":
 						[
 							[
-								201,
-								201
+								179,
+								147
 							]
 						],
 						"settings":
@@ -562,8 +564,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								280,
+								280
 							]
 						],
 						"settings":
@@ -580,46 +582,18 @@
 				},
 				{
 					"buffer": 10,
-					"file": "src/entities/Trap.hx",
-					"settings":
-					{
-						"buffer_size": 1182,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								422,
-								422
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
 					"file": "src/entities/Box.hx",
 					"settings":
 					{
-						"buffer_size": 1767,
+						"buffer_size": 1750,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1232,
-								1232
+								0,
+								0
 							]
 						],
 						"settings":
@@ -630,6 +604,33 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 486.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/entities/Smoke.hx",
+					"settings":
+					{
+						"buffer_size": 141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								135,
+								135
+							]
+						],
+						"settings":
+						{
+							"haxe-build-id": 0,
+							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -709,6 +710,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 212.0,
+	"side_bar_width": 193.0,
 	"status_bar_visible": true
 }

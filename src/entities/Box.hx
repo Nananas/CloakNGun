@@ -19,7 +19,6 @@ class Box extends Entity
 	public function new (X:Int, Y:Int, w:Int, h:Int)
 	{
 		super(X,Y);
-		trace("haha");
 		loadImage(w,h);
 
 		setHitbox(w, h);

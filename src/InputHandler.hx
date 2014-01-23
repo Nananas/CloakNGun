@@ -119,10 +119,9 @@ class InputHandler
 	public static function init (pCount:Int = 1)
 	{
 		if (pCount < 1) trace ("pCount needs to be 1 or higher!");
+		var getContext = JNI.createStaticMethod("org.haxe.lime.GameActivity", "getContext", "()Landroid/content/Context;",true);
 
-		var getContext = JNI.createStaticMethod("org.haxe.nme.GameActivity", "getContext", "()Landroid/content/Context;",true);
 		OuyaController.init(getContext());
-
 		_playerCount = pCount;
 		axis = new Array<Vector>();
 		axisOther = new Array<Vector>();

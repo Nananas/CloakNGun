@@ -39,15 +39,11 @@ class SelectMenu extends Scene
 		// show text on screen
 		welcomeText = new Text("Press [O] to ready, press [U] to swap positions. [A] change maps. [Y] to change next map method");
 		addGraphic(welcomeText,-HXP.height-20,HXP.width / 2 - welcomeText.width / 2, 10);
-
 		mapName = new Text("Cross");
 		addGraphic(mapName, -HXP.height - 80, HXP.width / 2 - mapName.width / 2, HXP.height -  40);
-
 		nextMapMethod = new Text("Repeat");
 		addGraphic(nextMapMethod, -HXP.height-100,HXP.width/2 - nextMapMethod.width / 2, HXP.height - 50);
-
 		InputHandler.init(2);
-
 		Registry.cloakSkill = 1;
 
 		// create cloak and gun, so the joysticks are initialised
@@ -72,12 +68,11 @@ class SelectMenu extends Scene
 		var b:Box = new Box(Std.int(HXP.width/2 - 25), 0, 50, HXP.height+200); // middle
 		add(b);
 
-
 		effect = new Effect(Effects.RAIN);
 		add(effect);
-
 		// load all other maps, this can ofc change if it takes too long to load
 		Maps.loadMaps();
+
 	}
 
 	public function reset()
