@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"swi",
+				"switchCG	function"
+			],
+			[
+				"switch",
+				"switchCG	function"
+			],
+			[
+				"swit",
+				"switchCC"
+			],
+			[
+				"Ouya",
+				"OUYA_GAMEPAD	com.haxepunk.utils.Joystick"
+			],
+			[
+				"RIGHT",
+				"RIGHT_ANALOGUE_Y"
+			],
+			[
+				"RIGHT_",
+				"RIGHT_ANALOGUE_X"
+			],
+			[
 				"recu",
 				"recursiveDown	function"
 			],
@@ -76,42 +100,10 @@
 	"buffers":
 	[
 		{
-			"file": "src/Registry.hx",
-			"settings":
-			{
-				"buffer_size": 2893,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/Main.hx",
-			"settings":
-			{
-				"buffer_size": 282,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/menu/SelectMenu.hx",
 			"settings":
 			{
-				"buffer_size": 3601,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Gebruiker/Desktop/Tut1/Tut1/project.xml",
-			"settings":
-			{
-				"buffer_size": 873,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/entities/TheCloak.hx",
-			"settings":
-			{
-				"buffer_size": 9380,
+				"buffer_size": 3970,
 				"line_ending": "Windows"
 			}
 		},
@@ -119,56 +111,34 @@
 			"file": "src/MainScene.hx",
 			"settings":
 			{
-				"buffer_size": 2888,
+				"buffer_size": 3039,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/entities/effects/Rain.hx",
+			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 767,
+				"buffer_size": 425,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/entities/effects/Snow.hx",
+			"file": "project.xml",
 			"settings":
 			{
-				"buffer_size": 1196,
+				"buffer_size": 989,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "TODO.txt",
+			"contents": "Searching 19 files for \"lastkey\"\n\nC:\\Users\\Gebruiker\\Documents\\GitHub\\CloakNGun\\src\\MainScene.hx:\n   56  		Registry.currentMap.build(this);\n   57  \n   58: 		Input.lastKey = 0;\n   59  \n   60  		effect = new Effect(Effects.SNOW);\n   ..\n  122  		//}\n  123  \n  124: 		if (Input.lastKey == 16777234){\n  125: 			Input.lastKey = 0;\n  126  			HXP.scene = Registry.selectScene;\n  127  		}\n\nC:\\Users\\Gebruiker\\Documents\\GitHub\\CloakNGun\\src\\menu\\SelectMenu.hx:\n  110  \n  111  	#if cpp\n  112: 		if (Input.lastKey == \"\")\n  113  	#end\n  114  		// change maps\n\n4 matches across 2 files\n",
 			"settings":
 			{
-				"buffer_size": 529,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/entities/GunsLockTrap.hx",
-			"settings":
-			{
-				"buffer_size": 892,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/entities/Box.hx",
-			"settings":
-			{
-				"buffer_size": 1750,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/entities/Smoke.hx",
-			"settings":
-			{
-				"buffer_size": 141,
-				"line_ending": "Windows"
+				"buffer_size": 572,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
 			}
 		}
 	],
@@ -187,7 +157,11 @@
 	},
 	"console":
 	{
-		"height": 125.0
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
 	},
 	"distraction_free":
 	{
@@ -200,25 +174,37 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/project.xml",
+		"/C/Stuff/Progs/Haxe/haxe/std/neko/_std/Array.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/OuyaGamepadDemo/src/MainScene.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/TheGun.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/OuyaGamepadDemo/src/Button.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/TheCloak.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/MainScene.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/InputHandler.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Smoke.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/Registry.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Box.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/Main.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/menu/SelectMenu.hx",
+		"/C/Users/Gebruiker/Desktop/Tut1/Tut1/project.xml",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/GunsLockTrap.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/TODO.txt",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/effects/Snow.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/effects/Rain.hx",
 		"/C/Users/Gebruiker/Documents/Stuff/Prog/PUNK/Yasii/project.xml",
 		"/C/Users/Gebruiker/Desktop/Tut1/Tut1/src/Main.hx",
 		"/C/Users/Gebruiker/Desktop/Tut1/Tut1/src/MainScene.hx",
-		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/InputHandler.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Trap.hx",
-		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/MainScene.hx",
-		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/Main.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/effects/Effect.hx",
-		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/project.xml",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/CloakGhost.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Bullet.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/TODO.txt~",
-		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/TODO.txt",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Effect.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Map.hx",
 		"/C/Users/Gebruiker/AppData/Roaming/transmission/settings.json",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/BulletParticle.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/TheCloakDodge.hx",
-		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Box.hx",
 		"/C/Development/Android SDK/extras/google/usb_driver/android_winusb.inf",
 		"/C/Stuff/Progs/Android/SDK/adt-bundle-windows-x86_64-20131030/sdk/extras/google/usb_driver/android_winusb.inf"
 	],
@@ -228,7 +214,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 			"C:\\Users\\Gebruiker\\Documents\\GitHub\\CloakNGun\\src, *.hx"
@@ -239,6 +225,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lastkey",
+			"&&",
+			"width",
+			"height",
+			"layer",
+			"InputHandler",
+			"angle",
+			"inputhandler",
+			"doskill()",
+			"skill",
+			"check",
+			"checkbu",
+			"inputhandler",
+			"InputHandler",
+			"text",
 			"haxepunk",
 			"init",
 			"scale",
@@ -295,7 +296,7 @@
 			"ID",
 			"_skillId"
 		],
-		"reverse": true,
+		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -304,23 +305,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Registry.hx",
+					"file": "src/menu/SelectMenu.hx",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2893,
+						"buffer_size": 3970,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								582,
-								582
+								2810,
+								2810
 							]
 						],
 						"settings":
@@ -330,237 +332,77 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 108.0,
+						"translation.y": 1455.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/Main.hx",
+					"file": "src/MainScene.hx",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 282,
+						"buffer_size": 3039,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								272,
-								272
+								1292,
+								1292
 							]
 						],
 						"settings":
 						{
 							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage"
+							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "src/menu/SelectMenu.hx",
+					"file": "README.md",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3601,
+						"buffer_size": 425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2047,
-								2047
+								248,
+								248
 							]
 						],
 						"settings":
 						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 210.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "/C/Users/Gebruiker/Desktop/Tut1/Tut1/project.xml",
+					"file": "project.xml",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 873,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								188,
-								188
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/entities/TheCloak.hx",
-					"settings":
-					{
-						"buffer_size": 9380,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2202,
-								2202
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 918.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/MainScene.hx",
-					"settings":
-					{
-						"buffer_size": 2888,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2888,
-								2888
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 342.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/entities/effects/Rain.hx",
-					"settings":
-					{
-						"buffer_size": 767,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								547,
-								547
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/entities/effects/Snow.hx",
-					"settings":
-					{
-						"buffer_size": 1196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								251,
-								251
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "TODO.txt",
-					"settings":
-					{
-						"buffer_size": 529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								179,
-								147
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/entities/GunsLockTrap.hx",
-					"settings":
-					{
-						"buffer_size": 892,
+						"buffer_size": 989,
 						"regions":
 						{
 						},
@@ -573,76 +415,80 @@
 						],
 						"settings":
 						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
+							"syntax": "Packages/XML/XML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/entities/Box.hx",
-					"settings":
-					{
-						"buffer_size": 1750,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1472,
-								1479
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 708.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "src/entities/Smoke.hx",
-					"settings":
-					{
-						"buffer_size": 141,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								135,
-								135
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 572,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										163,
+										170
+									],
+									[
+										274,
+										281
+									],
+									[
+										312,
+										319
+									],
+									[
+										494,
+										501
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								157,
+								175
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -674,7 +520,7 @@
 		"cols":
 		[
 			0.0,
-			0.934036939314,
+			0.60133178923,
 			1.0
 		],
 		"rows":
@@ -688,6 +534,11 @@
 	{
 		"height": 94.0
 	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "CloakNGun.sublime-project",
 	"replace":
 	{
 		"height": 62.0
@@ -709,10 +560,24 @@
 		],
 		"width": 0.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 193.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

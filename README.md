@@ -9,4 +9,4 @@ Updated for Haxepunk 2.5.1 for android (ouya console) & cpp (only 1 controller)
 
 (Old) screenshot, Cloak guy is invisible here:
 
-![alt text](https://raw.github.com/Nananas/CloakNGun/master/CloakAndGun%20Boxes%20basic%20tiles.png "Screenshot")
+![alt text](https://raw.github.com/Nananas/CloakNGun/master/Cross_ver2.png "Screenshot")
