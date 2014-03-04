@@ -14,6 +14,6 @@ $> lime test android -Douya
 ```
 (or ```openfl``` instead of ```lime```)
 
-(Old) screenshot, Cloak guy is invisible here:
+screenshot of level Cross:
 
-![alt text](https://raw.github.com/Nananas/CloakNGun/master/Cross_ver2.png "Screenshot")
+![alt text](https://raw.github.com/Nananas/CloakNGun/master/Cross_ver2.png "Screenshot of Cross")
