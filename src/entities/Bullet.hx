@@ -107,7 +107,7 @@ class Bullet extends Entity
 		// shadow
 		shadowEnt.x = x;
 		shadowEnt.y = y + 6;
-		shadow.layer = layer+1;
+		shadowEnt.layer = layer+1;
 
 		super.update();
 	}

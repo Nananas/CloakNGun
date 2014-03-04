@@ -239,7 +239,7 @@ class TheGun extends Entity
 			y += speed.y;
 
 			layer = Std.int(-(y+animation.height));
-			gunImage.layer = layer;
+			gunEntity.layer = layer;
 
 			// gun position logic
 			gunEntity.x = x + 1 + originOffset;
@@ -258,7 +258,7 @@ class TheGun extends Entity
 			}
 
 		} else {
-			gunImage.layer = layer;
+			gunEntity.layer = layer;
 			// check if the endgame animation is complete
 			if (animation.complete) finished = true;
 
@@ -309,7 +309,7 @@ class TheGun extends Entity
 		// thow gun away
 		gunImage.originX = 4;
 		gunImage.originY = 1;
-		gunImage.layer = 13;
+		gunEntity.layer = 13;
 		speed.setTo(Math.random()-0.5,-2);
 
 		// update score
@@ -335,7 +335,7 @@ class TheGun extends Entity
 		// throw the gun away, change origin to middel
 		gunImage.originX = 4;
 		gunImage.originY = 1;
-		gunImage.layer = 13;
+		gunEntity.layer = 13;
 
 		// use speed for gun
 		speed.setTo(Math.random()-1,-4);

@@ -100,18 +100,18 @@
 			}
 		},
 		{
+			"file": "/C/Users/Gebruiker/Desktop/Tut1/Tut1/project.xml",
+			"settings":
+			{
+				"buffer_size": 873,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/entities/TheCloak.hx",
 			"settings":
 			{
 				"buffer_size": 9380,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/InputHandler.hx",
-			"settings":
-			{
-				"buffer_size": 5843,
 				"line_ending": "Windows"
 			}
 		},
@@ -200,6 +200,10 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Gebruiker/Documents/Stuff/Prog/PUNK/Yasii/project.xml",
+		"/C/Users/Gebruiker/Desktop/Tut1/Tut1/src/Main.hx",
+		"/C/Users/Gebruiker/Desktop/Tut1/Tut1/src/MainScene.hx",
+		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/InputHandler.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Trap.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/MainScene.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/Main.hx",
@@ -207,7 +211,6 @@
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/project.xml",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/CloakGhost.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Bullet.hx",
-		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/InputHandler.hx",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/TODO.txt~",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/TODO.txt",
 		"/C/Users/Gebruiker/Documents/GitHub/CloakNGun/src/entities/Effect.hx",
@@ -236,6 +239,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"haxepunk",
 			"init",
 			"scale",
 			"5",
@@ -300,7 +304,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -315,8 +319,8 @@
 						"selection":
 						[
 							[
-								794,
-								794
+								582,
+								582
 							]
 						],
 						"settings":
@@ -326,7 +330,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -343,8 +347,8 @@
 						"selection":
 						[
 							[
-								218,
-								218
+								272,
+								272
 							]
 						],
 						"settings":
@@ -388,6 +392,33 @@
 				},
 				{
 					"buffer": 3,
+					"file": "/C/Users/Gebruiker/Desktop/Tut1/Tut1/project.xml",
+					"settings":
+					{
+						"buffer_size": 873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								188,
+								188
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "src/entities/TheCloak.hx",
 					"settings":
 					{
@@ -398,8 +429,8 @@
 						"selection":
 						[
 							[
-								760,
-								760
+								2202,
+								2202
 							]
 						],
 						"settings":
@@ -409,35 +440,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 142.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/InputHandler.hx",
-					"settings":
-					{
-						"buffer_size": 5843,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2908,
-								2908
-							]
-						],
-						"settings":
-						{
-							"haxe-build-id": 0,
-							"syntax": "Packages/Haxe/Haxe.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1512.0,
+						"translation.y": 918.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -564,8 +567,8 @@
 						"selection":
 						[
 							[
-								280,
-								280
+								0,
+								0
 							]
 						],
 						"settings":
@@ -592,8 +595,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								1472,
+								1479
 							]
 						],
 						"settings":
@@ -603,7 +606,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 486.0,
+						"translation.y": 708.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
