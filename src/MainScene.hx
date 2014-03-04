@@ -33,7 +33,6 @@ class MainScene extends Scene
 
 	public function init()
 	{
-		//InputHandler.init(2);
 
 		theGun = new TheGun(HXP.width-40, HXP.height/2);
 		theCloak = new TheCloak(40,HXP.height/2);
@@ -42,16 +41,16 @@ class MainScene extends Scene
 
 		// show player number symbols
 		PGText = new Text("P"+(Registry.theGunControllerNumber+1), 0, -20);
-		PGText.size = 32;
+		PGText.size = 16;
 		PCText = new Text("P"+(Registry.theCloakControllerNumber+1), 0, -20);
-		PCText.size = 32;
+		PCText.size = 16;
 
 		PGEnt = addGraphic(PGText, 5, theGun.x, theGun.y);
 		PCEnt = addGraphic(PCText, 5, theCloak.x, theCloak.y);
 
 		scoreText = new Text("P1: " +Registry.score[0] + "  |  P2: "+Registry.score[1]);
-		scoreText.size = 24;
-		addGraphic(scoreText,1,HXP.width / 2,10);
+		scoreText.size = 16;
+		addGraphic(scoreText,-HXP.height*2,HXP.width / 2 - scoreText.textWidth/2,HXP.height-15);
 
 		//build chosen map 
 		Registry.currentMap.build(this);
@@ -117,21 +116,22 @@ class MainScene extends Scene
 			PCEnt.x = theCloak.x; PCEnt.y = theCloak.y;			
 		}
 
-		//if (PGText.alpha == 0){
-		//	remove(PGEnt);
-		//	remove(PCEnt);
-		//}
+	#if cpp		// only one ouya gamepad can be used, enable this for debugging on cpp target
+		if (Input.pressed(com.haxepunk.utils.Key.SPACE)){
+			Input.lastKey = 0;
 
+			// switch character
+			Registry.switchCC();
+		}
+	#else
 		if (Input.lastKey == 16777234){
 			Input.lastKey = 0;
 			HXP.scene = Registry.selectScene;
 		}
-
+	#end
 		if (theGun.finished && theCloak.finished){
 			// switch the controllers
 			Registry.switchCC();
-
-			// restart scene
 			reset();
 			
 		}

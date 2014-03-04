@@ -8,6 +8,9 @@ import com.haxepunk.graphics.Graphiclist;
 import com.haxepunk.math.Vector;
 import com.haxepunk.HXP;
 
+import com.haxepunk.utils.Input;
+import com.haxepunk.utils.Joystick.OUYA_GAMEPAD;
+
 class TheCloak extends Entity
 {
 	private var _dodgeTimer:Float = 3;
@@ -45,9 +48,6 @@ class TheCloak extends Entity
 
 	public var finished:Bool;
 	public var controllerNumber:Int = 1;
-
-	private var _checkButtonPressed : Int -> Void;
-	private var _checkButtonReleased : Int -> Void;
 
 	private var _skillID : Int;
 
@@ -99,23 +99,6 @@ class TheCloak extends Entity
 		showTimer = 0;
 		_isRunning = false;
 
-
-		_checkButtonPressed = function(id:Int){
-			if (id==9)
-			{
-				doSkill();
-				//shootShadow();
-			}
-		}
-
-		_checkButtonReleased = function (id:Int){
-
-		}
-
-		InputHandler.initButtons(Registry.theCloakControllerNumber, 
-								_checkButtonPressed, 	
-								_checkButtonReleased);
-
 		type = "thecloak";
 		name = "thecloak";
 
@@ -159,8 +142,12 @@ class TheCloak extends Entity
 				}
 			}
 
+
+			// Skill
+			if (Input.joystick(Registry.theCloakControllerNumber).pressed(OUYA_GAMEPAD.RIGHT_TRIGGER_BUTTON)) doSkill();
+
 			// run logic
-			if (runTimer >= 0 && runTimer < 600 && InputHandler.eventAxis[Registry.theCloakControllerNumber][17] < 0.15){
+			if (runTimer >= 0 && runTimer < 600 && Input.joystick(Registry.theCloakControllerNumber).getAxis(OUYA_GAMEPAD.LEFT_TRIGGER) < 0.15){
 				runTimer += 2;
 				indicator.color = 0x555555;
 			}else{
@@ -170,7 +157,7 @@ class TheCloak extends Entity
 			var extra:Int = 1;
 			if (runTimer >= 10){
 				// can run
-				if (InputHandler.eventAxis[Registry.theCloakControllerNumber][17] > 0.15){
+				if (Input.joystick(Registry.theCloakControllerNumber).getAxis(OUYA_GAMEPAD.LEFT_TRIGGER) > 0.15){
 					extra = 4;
 					runTimer-= 10;
 				}
@@ -209,7 +196,7 @@ class TheCloak extends Entity
 			// dodge logic
 			if (canDodge){
 				// check right joystick axis
-				if (InputHandler.getAxis(Registry.theCloakControllerNumber,1).length > 0){
+				if (Input.joystick(Registry.theCloakControllerNumber).getAxis(OUYA_GAMEPAD.RIGHT_ANALOGUE_X) != 0 || Input.joystick(Registry.theCloakControllerNumber).getAxis(OUYA_GAMEPAD.RIGHT_ANALOGUE_Y) != 0){
 					//dodge
 					dodge();
 				}
@@ -225,8 +212,8 @@ class TheCloak extends Entity
 
 			// not too fast
 			if (speed.length < _maxSpeed*extra){
-				speed.x += InputHandler.getAxis(Registry.theCloakControllerNumber).x * _acc * extra;
-				speed.y += InputHandler.getAxis(Registry.theCloakControllerNumber).y * _acc * extra;
+				speed.x += Input.joystick(Registry.theCloakControllerNumber).getAxis(OUYA_GAMEPAD.LEFT_ANALOGUE_X) * _acc * extra;
+				speed.y += Input.joystick(Registry.theCloakControllerNumber).getAxis(OUYA_GAMEPAD.LEFT_ANALOGUE_Y) * _acc * extra;
 			}
 
 			// collision with walls
@@ -334,10 +321,6 @@ class TheCloak extends Entity
 
 		finished = false;
 		endgame = false;
-		
-		InputHandler.initButtons(Registry.theCloakControllerNumber, 
-								_checkButtonPressed, 	
-								_checkButtonReleased);
 
 		_skillID = Registry.cloakSkill;
 	}
@@ -363,7 +346,8 @@ class TheCloak extends Entity
 	private function dodge(){
 		canDodge = false;
 		dodgeTimer = _dodgeTimer;
-		var v:Vector = InputHandler.getAxis(Registry.theCloakControllerNumber,1);
+		var v:Vector = new Vector(Input.joystick(Registry.theCloakControllerNumber).getAxis(OUYA_GAMEPAD.RIGHT_ANALOGUE_X), 
+									Input.joystick(Registry.theCloakControllerNumber).getAxis(OUYA_GAMEPAD.RIGHT_ANALOGUE_Y));
 		v.normalize(1);
 		speed.x += v.x * _dodgeSpeed;
 		speed.y += v.y * _dodgeSpeed;

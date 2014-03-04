@@ -10,6 +10,8 @@ import com.haxepunk.HXP;
 import com.haxepunk.utils.Input;
 import com.haxepunk.graphics.Emitter;
 
+import com.haxepunk.utils.Joystick.OUYA_GAMEPAD;
+
 import entities.BulletParticle;
 import entities.Bullet;
 import entities.GunsLockTrap;
@@ -92,23 +94,6 @@ class TheGun extends Entity
 		bulletContainer = 1;
 		bulletRegenTimer = 0;
 
-		_KeyDownCallback = function (id:Int){
-			if (id==7){
-				if (canShoot && !endgame){
-					var b:Bullet = new entities.Bullet(x+3,y+7,Math.cos(angle) * _bulletVelocity, Math.sin(angle)*_bulletVelocity, angle, explode, emit);
-					scene.add(b);
-					bulletContainer--;
-					shootTimer = _shootTimer;
-				}
-			}
-			if (id==InputHandler.OuyaKeyCode.KEY_O)
-			{
-				doTrap();
-			}
-		}
-
-		InputHandler.initButtons(Registry.theGunControllerNumber, _KeyDownCallback);
-
 		type = "thegun";
 		name = "thegun";
 
@@ -148,6 +133,9 @@ class TheGun extends Entity
 				}
 			}
 
+			// Skill
+			if (Input.joystick(Registry.theGunControllerNumber).pressed(OUYA_GAMEPAD.O_BUTTON)) doTrap();
+
 			// bullet regen logic
 			if (bulletContainer < 2){
 				if (bulletRegenTimer <= 0){
@@ -161,6 +149,16 @@ class TheGun extends Entity
 
 			canShoot = false;
 			if (bulletContainer >= 1) canShoot = true;
+			// Shoot
+			if (canShoot){
+				if (Input.joystick(Registry.theGunControllerNumber).pressed(OUYA_GAMEPAD.RB_BUTTON)){
+					var b:Bullet = new entities.Bullet(x+3,y+7,Math.cos(angle) * _bulletVelocity, Math.sin(angle)*_bulletVelocity, angle, explode, emit);
+					scene.add(b);
+					bulletContainer--;
+					shootTimer = _shootTimer;
+				}
+				
+			}
 
 			if (bulletContainer == 0){
 				indicator.color = 0x000000;
@@ -171,8 +169,9 @@ class TheGun extends Entity
 			}
 
 			// aim logic
-			if (InputHandler.getAxis(Registry.theGunControllerNumber,1).length > 0.20){
-				angle = Math.atan2(InputHandler.getAxis(Registry.theGunControllerNumber,1).y, InputHandler.getAxis(Registry.theGunControllerNumber,1).x);
+			if (Input.joystick(Registry.theGunControllerNumber).getAxis(OUYA_GAMEPAD.RIGHT_ANALOGUE_X) != 0 || Input.joystick(Registry.theGunControllerNumber).getAxis(OUYA_GAMEPAD.RIGHT_ANALOGUE_Y) != 0){
+				angle = Math.atan2(Input.joystick(Registry.theGunControllerNumber).getAxis(OUYA_GAMEPAD.RIGHT_ANALOGUE_Y),
+									Input.joystick(Registry.theGunControllerNumber).getAxis(OUYA_GAMEPAD.RIGHT_ANALOGUE_X));
 			}
 
 			// updating gun angle
@@ -185,8 +184,8 @@ class TheGun extends Entity
 			speed.y *= 0.9;
 
 
-			speed.x += InputHandler.getAxis(Registry.theGunControllerNumber).x*_acc;
-			speed.y += InputHandler.getAxis(Registry.theGunControllerNumber).y*_acc;
+			speed.x += Input.joystick(Registry.theGunControllerNumber).getAxis(OUYA_GAMEPAD.LEFT_ANALOGUE_X)*_acc;
+			speed.y += Input.joystick(Registry.theGunControllerNumber).getAxis(OUYA_GAMEPAD.LEFT_ANALOGUE_Y)*_acc;
 
 			if (speed.length > _maxSpeed) speed.normalize(_maxSpeed);
 
@@ -351,8 +350,6 @@ class TheGun extends Entity
 
 		gunImage.originX = 0;
 		gunImage.originY = 0;
-
-		InputHandler.initButtons(Registry.theGunControllerNumber, _KeyDownCallback);
 	}
 
 	private function doTrap()

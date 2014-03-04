@@ -15,6 +15,10 @@
 	<haxelib name="HaxePunk" />
 	<haxelib name="openfl-ouya"/>
 
+	<!-- when compiling for ouya, uncomment this line or use
+		-Douya after [lime test android] -->
+	<!-- <haxedef name="ouya" /> -->
+
 	<assets path="assets/graphics" rename="graphics" include="*.png|*.jpg" />
 	<assets path="assets/audio" rename="audio" include="*.mp3" if="flash" />
 	<assets path="assets/audio" rename="audio" include="*.wav|*.ogg" unless="flash" />

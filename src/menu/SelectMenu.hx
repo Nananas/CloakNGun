@@ -10,6 +10,9 @@ import entities.Box;
 import entities.effects.Effect;
 import entities.effects.Effect.Effects;
 
+import com.haxepunk.utils.Input;
+import com.haxepunk.utils.Joystick.OUYA_GAMEPAD;
+
 import Registry.Maps;
 
 class SelectMenu extends Scene
@@ -37,13 +40,15 @@ class SelectMenu extends Scene
 		trace("startup SelectMenu");
 
 		// show text on screen
-		welcomeText = new Text("Press [O] to ready, press [U] to swap positions. [A] change maps. [Y] to change next map method");
-		addGraphic(welcomeText,-HXP.height-20,HXP.width / 2 - welcomeText.width / 2, 10);
+		welcomeText = new Text("Press [O] to ready, press [U] to swap positions.\n[A] change maps. [Y] to change cycle method.");
+		welcomeText.size = 8;
+		addGraphic(welcomeText, - HXP.height*2,HXP.width / 2 - welcomeText.textWidth / 2, 10);
 		mapName = new Text("Cross");
-		addGraphic(mapName, -HXP.height - 80, HXP.width / 2 - mapName.width / 2, HXP.height -  40);
+		mapName.size = 8;
+		addGraphic(mapName, -HXP.height*2, HXP.width / 2 - mapName.textWidth / 2, HXP.height -  40);
 		nextMapMethod = new Text("Repeat");
-		addGraphic(nextMapMethod, -HXP.height-100,HXP.width/2 - nextMapMethod.width / 2, HXP.height - 50);
-		InputHandler.init(2);
+		nextMapMethod.size = 8;
+		addGraphic(nextMapMethod, -HXP.height*2,HXP.width/2 - nextMapMethod.textWidth / 2, HXP.height - 50);
 		Registry.cloakSkill = 1;
 
 		// create cloak and gun, so the joysticks are initialised
@@ -73,6 +78,10 @@ class SelectMenu extends Scene
 		// load all other maps, this can ofc change if it takes too long to load
 		Maps.loadMaps();
 
+	#if cpp		// only one ouya gamepad can be used, enable this for debugging on cpp target
+		Input.lastKey = 0;
+	#end
+
 	}
 
 	public function reset()
@@ -89,32 +98,44 @@ class SelectMenu extends Scene
 
 	public override function update ()
 	{
-		
+
+	#if cpp		// only one ouya gamepad can be used, enable this for debugging on cpp target
+		if (Input.pressed(com.haxepunk.utils.Key.SPACE)){
+			Input.lastKey = 0;
+
+			// switch character
+			Registry.switchCC();
+		}
+	#end
+
 		// show cloak
 		cloak.show();
 
 		// check for change button press
-		if (InputHandler.checkButton(InputHandler.OuyaKeyCode.KEY_U,0) 
-			&& InputHandler.checkButton(InputHandler.OuyaKeyCode.KEY_U,1)){
+		if (Input.joystick(0).check(OUYA_GAMEPAD.U_BUTTON) 
+			&& Input.joystick(1).check(OUYA_GAMEPAD.U_BUTTON)){
 
-			// switch c en c
+			// switch c en g
 			Registry.switchCC();
 
 			reset();
 		}
+		
+
+
 
 		// change maps
-		if (InputHandler.wasButtonJustPressed(InputHandler.OuyaKeyCode.KEY_A,0))
+		if (Input.joystick(0).pressed(OUYA_GAMEPAD.A_BUTTON))
 		{
 			setNextMap();
 		}
 		
-		if (InputHandler.wasButtonJustPressed(InputHandler.OuyaKeyCode.KEY_Y,0))
+		if (Input.joystick(0).pressed(OUYA_GAMEPAD.Y_BUTTON))
 		{
 			setNextmapMethod();
 		}
 
-		if (InputHandler.wasButtonJustPressed(InputHandler.OuyaKeyCode.KEY_U, Registry.theCloakControllerNumber))
+		if (Input.joystick(Registry.theCloakControllerNumber).pressed(OUYA_GAMEPAD.U_BUTTON))
 		{
 			// switch skill of cloak
 			cloak.switchSkill();
@@ -130,7 +151,6 @@ class SelectMenu extends Scene
 			HXP.scene = Registry.playScene;
 		}
 
-		InputHandler.update();
 		super.update();
 	}
 
